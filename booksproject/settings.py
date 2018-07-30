@@ -25,9 +25,9 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 # SECRET_KEY = 'b&^k0hve1)d62%9r=0pjuxu)%g1l(m#v2t7ni70sj*en7y6(fu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 SECRET_KEY = config('SECRET_KEY')
-# DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
