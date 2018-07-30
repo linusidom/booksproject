@@ -33,7 +33,7 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
-ALLOWED_HOSTS = ['modisidom']
+ALLOWED_HOSTS = ['modisidom.herokuapp.com']
 
 
 # Application definition
