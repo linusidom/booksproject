@@ -1,11 +1,14 @@
 {% extends 'expenses/base.html' %}
 {% block body_block %}
+
+<section>
 <h1>expenses List HTML</h1>
 
 <li>{{expense.expense_type}} {{expense.create_date}}</li>
 <li>Amount: {{expense.amount}} Item: {{expense.expense_item}}</li>
 <li>{{expense.user}}</li>
 
-<a href="{% url 'expenses:expense_update' pk=expense.pk %}">Update</a>
-<a href="{% url 'expenses:expense_delete' pk=expense.pk %}">Delete</a>
+<a class='btn btn-info' href="{% url 'expenses:expense_update' pk=expense.pk %}">Update</a>
+<a class='btn btn-primary' href="{% url 'expenses:expense_delete' pk=expense.pk %}">Delete</a>
+</section>
 {% endblock %}

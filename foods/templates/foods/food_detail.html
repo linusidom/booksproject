@@ -1,5 +1,6 @@
 {% extends 'foods/base.html' %}
 {% block body_block %}
+<section id='food_detail'>
 <h1>foods HTML</h1>
 
 <h3>item: {{food.food_item}}</h3>
@@ -7,7 +8,7 @@
 <h3>{{food.create_date}}</h3>
 <h3>user: {{food.user}}</h3>
 <h3>calories: {{food.calories}}</h3>
-<a href="{% url 'foods:food_update' pk=food.pk %}">Update</a>
-<a href="{% url 'foods:food_delete' pk=food.pk %}">Delete</a>
-
+<a class='btn btn-info' href="{% url 'foods:food_update' pk=food.pk %}">Update</a>
+<a class='btn-primary' href="{% url 'foods:food_delete' pk=food.pk %}">Delete</a>
+</section>
 {% endblock %}
