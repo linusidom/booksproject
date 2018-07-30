@@ -1,14 +1,6 @@
 appnope==0.1.0
 asn1crypto==0.24.0
-beautifulsoup4==4.6.0
 bleach==2.1.2
-bs4==0.0.1
-certifi==2018.1.18
-cffi==1.11.2
-chardet==3.0.4
-colorlover==0.2.1
-cryptography==2.3
-cufflinks==0.12.1
 cycler==0.10.0
 decorator==4.2.1
 defusedxml==0.5.0
