@@ -1,8 +1,8 @@
 {% extends 'expenses/base.html' %}
 {% block body_block %}
 
-<section>
-<h1>expenses List HTML</h1>
+<section id = 'expense_detail'>
+<h1>expenses DETAIL</h1>
 
 <li>{{expense.expense_type}} {{expense.create_date}}</li>
 <li>Amount: {{expense.amount}} Item: {{expense.expense_item}}</li>
