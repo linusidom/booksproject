@@ -21,12 +21,18 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b&^k0hve1)d62%9r=0pjuxu)%g1l(m#v2t7ni70sj*en7y6(fu'
+# SECRET_KEY = 'b&^k0hve1)d62%9r=0pjuxu)%g1l(m#v2t7ni70sj*en7y6(fu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+# DEBUG = True
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
+ALLOWED_HOSTS = ['thawing-brook-81399']
 
 
 # Application definition
@@ -102,12 +108,12 @@ WSGI_APPLICATION = 'booksproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 
 # Password validation
@@ -151,7 +157,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
