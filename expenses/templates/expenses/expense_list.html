@@ -1,0 +1,35 @@
+{% extends 'expenses/base.html' %}
+{% block body_block %}
+
+<section id='expense_list'>
+	<div class='expense_header'>
+		<h1>expenses LIST</h1>
+		<a href="{% url 'expenses:expense_create' %}">Create an Expense</a>
+	</div>
+	<div class='clr'></div>
+	<div class='expense_table'>
+	{% if expense_list %}
+		<table class='table'>
+			<thead>
+				<tr>
+					<td>Log Date</td>
+					<td>Item</td>
+					<td>Category</td>
+					<td>Amount</td>
+				</tr>
+			</thead>
+			<tbody>
+			{% for expense in expense_list %}
+				<tr>
+					<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.create_date}}</a></td>
+					<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_item}}</a></td>
+					<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_type}}</a></td>
+					<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.amount}}</a></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	</div>
+</section>
+{% endblock %}

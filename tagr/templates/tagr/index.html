@@ -1,0 +1,25 @@
+{% extends 'tagr/base.html' %}
+{% block body_block %}
+<section id='tagr'>
+	<h1>Welcome to the Think and Grow Rich Challenge</h1>
+
+	<p>Napoeloen Hill set out on a quest to understand the minds of the most Successful people in America.</p>
+	<p>Through his journey he discovered some very similar traits in all these people</p>
+	<p>I propose a challenge to you</p>
+	<p>Read the book, answer the questions</p>
+	<p>All answers are private to yourself</p>
+	<p>All the progress and benefits gained through this exercise are also private and belong to you and you alone</p>
+	
+	<div class='tagr_schedule'>
+		<h4>The Schedule</h4>
+		<h5>15 Weeks...Starting Now</h5>
+		<p>Read 1 Chapter, only 1 Chapter per week and document your thoughts...that's it</p>
+	</div>
+	
+	<h3><a href="{% url 'accounts:signup' %}">Sign up and Start the Challenge</a></h3>
+	
+</section>
+
+
+
+{% endblock %}

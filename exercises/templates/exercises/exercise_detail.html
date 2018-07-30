@@ -1,0 +1,14 @@
+{% extends 'exercises/base.html' %}
+{% block body_block %}
+<h1>exercises List HTML</h1>
+
+<h3>User {{exercise.user}}</h3>
+<h3>{{exercise.exercise_type}}</h3>
+<h3>{{exercise.minutes}}</h3>
+<h3>{{exercise.calories_burned}}</h3>
+
+
+<a href="{% url 'exercises:exercise_update' pk=exercise.pk %}">Update</a>
+<a href="{% url 'exercises:exercise_delete' pk=exercise.pk %}">Delete</a>
+		
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+{% block body_block %}
+<section id='account_delete'>
+<h1>Delete Account</h1>
+<form method="POST">
+	{% csrf_token %}
+	Are you sure you want to Delete your account? {{object}}<br>
+	<input class='btn btn-danger' type="submit" value="Delete">
+</form>
+</section>
+{% endblock %}

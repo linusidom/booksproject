@@ -1,0 +1,15 @@
+from django.conf.urls import url
+from accounts import views
+from django.contrib.auth import views as auth_views
+
+app_name='accounts'
+
+urlpatterns=[
+	url(r'^$',views.IndexTemplateView.as_view(), name = 'index'),
+	url(r'^signup/$',views.SignUpCreateView.as_view(), name = 'signup'),
+	url(r'^user_login/$', auth_views.LoginView.as_view(template_name = 'accounts/login.html'), name='user_login'),
+	url(r'^user_logout/$', auth_views.LogoutView.as_view(), name='user_logout'),
+	url(r'^(?P<pk>\d+)/$', views.UserModelDetailView.as_view(), name='user_detail'),
+	url(r'^update/(?P<pk>\d+)/$', views.UserModelUpdateView.as_view(), name='user_update'),
+	url(r'^delete/(?P<pk>\d+)/$', views.UserModelDeleteView.as_view(), name='user_delete'),
+]

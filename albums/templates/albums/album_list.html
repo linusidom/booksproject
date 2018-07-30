@@ -1,0 +1,73 @@
+{% extends 'books/base.html' %}
+{% block body_block %}
+
+<section id='album_showcase'>
+	<div class='album_con'>
+		<h1><strong>100+ Albums Ranked to Listen to before you die...</strong></h1>
+		<p>The following list is comprised of an aggregation of the 9 websites (listed below) resulting in this Master List of commonalites which indicate the most popular albums of all time.</p>
+		<p>In short, the more appearances the more popular.</p>
+		<p>Each Books contains links to Amazon and Wikipedia if you want more information about the book</p>
+		<p><strong>Did your favorite book make the list?</strong></p>
+	</div>
+	<div class='nerdinfo'>
+		<a href="{% url 'apiinfo' %}">
+		<h3><strong>nerd Info!</strong></h3>
+		<p>Is there an API?<span>YES!! :)</span></p>
+		<p>Do I have to authenticate?<span> No! :)...Whew!</span></p>
+		<p>But that means...<span>Yup, it's read-only</span></p>
+		<p>Wow this is really cool!  How did you put all this together?</p>
+		<p><span>Well if you must know, it was just simply scraping websites with Beautiful Soup, using Django as the back end and a little magic :)</span></p>
+		<p>Enjoy!</p></a>
+	</div>
+</section>
+
+
+
+{% if album_list %}
+	<table class='table'>
+		<thead>
+			<tr>
+				<td>Number of Lists</td>
+				<td>Album Title <span class='tablespan'>(Amazon)</span></td>
+				<td>Artist <span class='tablespan'>(Wiki)</span></td>
+				<td>Publication Date</td>
+			</tr>
+		</thead>
+		<tbody>
+		{% for album in album_list %}
+			<tr>
+				<td>{{album.occurrences}}</td>
+				<td><a href="{{album.amazonlink}}/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&linkCode=as2&tag=modisoperan08-20" target="_blank">{{album.title}}</a></td>
+				<td><a href="{{album.wikilink}}">{{album.artist}}</a></td>
+				<td>{{album.year}}</td>
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+
+{% endif %}
+<section id='albumsourcelist'>
+		
+<ul>
+<li><a href="https://www.discogs.com/lists/The-Guardian-100-Best-Albums-Ever/10967?page=1&limit=100">Discogs</a>
+</li>
+
+<li><a href="http://www.popvortex.com/music/100-greatest-albums/">PopVortex</a></li>
+
+<li><a href="https://www.besteveralbums.com/thechart.php?c=5&cbid=0&f=&fv=&orderby=Rank&sortdir=asc&page=2">Best Ever Albums</a></li>
+
+<li><a href="https://www.rollingstone.com/music/music-lists/500-greatest-albums-of-all-time-156826/?list_page=9">Rolling Stone Top 500 of all Time</a></li>
+
+<li><a href="https://www.billboard.com/charts/greatest-billboard-200-albums">BillBoard Best 200 albums of all Time</a></li>
+
+<li><a href="https://www.digitalmusicnews.com/2017/02/16/100-best-selling-albums-all-time/">Digital Music News</a></li>
+
+<li><a href="http://www.nme.com/photos/the-500-greatest-albums-of-all-time-100-1-1426116">NME Greatest Albums</a></li>
+
+<li><a href="https://www.stereogum.com/1395702/entertainment-weeklys-100-greatest-albums-ever/franchises/list/">StereoGum</a></li>
+
+<li><a href="http://absoluteradio.co.uk/competitions/100-greatest-albums/results.html">Absolute Radio</a></li>
+</ul>
+</section>
+{% endblock %}

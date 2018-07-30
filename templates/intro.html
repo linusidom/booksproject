@@ -1,0 +1,29 @@
+{% extends 'tagr/base.html' %}
+{% block body_block %}
+<section id='tagr'>
+	<div class='tagr_container'>
+	<h1>Welcome to the Think and Grow Rich Challenge</h1>
+
+	<p>Napoeloen Hill set out on a quest to understand the minds of the most Successful people in America.</p><br>
+	<p>Through his journey he discovered some very similar traits in all these people...and has shared them with you</p><br>
+	<p>Read the book, answer the questions</p><br>
+	<p>All the progress and benefits gained through this exercise are also private and belong to you and you alone</p><br>
+	
+
+	
+	<h3><a href="{% url 'tagr:post_list' %}">Start/Continue the Challenge</a></h3>
+	</div>
+</section>
+
+<section id='journalapp'>
+	<h1>Take Tracking to whole new level!</h1>
+	<h3>With this custom tracker, find out</h3>
+	<ul>
+		<li>How many calories are you getting for your Money</li>
+		<li>Do your expenses line up with your quality Goals</li>
+		<li>Where you could be 30 days from now!</li>
+	</ul>
+	<h3><a href="{% url 'reports:create_new_entry' %}">Get to My Tracker!</a></h3>
+</section>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+Step 1
+Gather the data from the lists
+- parse_books.py
+- Output Books.txt
+
+Step 2
+Rank the Title
+- pandas_ranking.py
+- Output pandasranked
+
+Step 3
+Get Amazon Links
+- get_amazon_links.py
+- Poll for Relevant information
+- Populate DB
+- Read pandasranked,split by ',' and search
+
+Step 4
+Get Wiki Links
+- get_wiki_links.py
+- Poll for Relevant Information
+- Populate DB
+- Read pandasranked, split by ',' and search
+
+
+Cleanup
+- Should make Google Poll for both Amazon and Wiki
+
+

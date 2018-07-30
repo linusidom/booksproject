@@ -1,0 +1,16 @@
+{% extends 'books/base.html' %}
+{% block body_block %}
+
+<section id='apiinfo'>
+	<h3>Welcome to the API Section</h3>
+	<p>Fairly simple, read-only access</p>
+
+	<p><strong>Read the full list of Books</strong></p>
+	<p><a href="{% url 'api_books:api_book_list' %}" target="_blank">Full List of Books via HTML</a></p>
+	<p><a href="{% url 'api_books:api_book_list' %}?format=json " target="_blank">Full List of Books via JSON</a> </p>
+
+	<p><strong>Read the full list of Albums</strong></p>
+	<p><a href="{% url 'api_albums:api_album_list' %}" target="_blank">Full List of Albums via HTML</a></p>
+	<p><a href="{% url 'api_albums:api_album_list' %}?format=json " target="_blank">Full List of Albums via JSON</a> </p>
+</section>
+{% endblock %}

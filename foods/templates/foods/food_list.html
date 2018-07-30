@@ -1,0 +1,42 @@
+{% extends 'foods/base.html' %}
+{% block body_block %}
+
+
+<section id='food_list'>
+	<div class='food_header'>
+		<h1>foods LIST</h1>
+		<a href="{% url 'foods:food_create' %}">Create a Food</a>
+	</div>
+	<div class='clr'></div>
+	<div class='food_table'>
+	{% if food_list %}
+		<table class='table'>
+			<thead>
+				<tr>
+					<td>Log Date</td>
+					<td>Item</td>
+					<td>Calories</td>
+					<td>Servings</td>
+					<td>Carbs</td>
+					<td>Protein</td>
+					<td>Fat</td>
+				</tr>
+			</thead>
+			<tbody>
+			{% for food in food_list %}
+				<tr>
+					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.create_date}}</a></td>
+					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.food_item}}</a></td>
+					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.calories}}</a></td>
+					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.servings}}</a></td>
+					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.carbs}}</a></td>
+					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.protein}}</a></td>
+					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.fat}}</a></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	</div>
+</section>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'exercises/base.html' %}
+{% block body_block %}
+
+<section id='exercise_list'>
+	<div class='exercise_header'>
+		<h1>exercises LIST</h1>
+		<a href="{% url 'exercises:exercise_create' %}">Create an Exercise</a>
+	</div>
+	<div class='clr'></div>
+	<div class='exercise_table'>
+	{% if exercise_list %}
+		<table class='table'>
+			<thead>
+				<tr>
+					<td>Log Date</td>
+					<td>Exercise Type</td>
+					<td>Calories</td>
+					<td>Minutes</td>
+				</tr>
+			</thead>
+			<tbody>
+			{% for exercise in exercise_list %}
+				<tr>
+					<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.create_date}}</a></td>
+					<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.exercise_type}}</a></td>
+					<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.calories_burned}}</a></td>
+					<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.minutes}}</a></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	</div>
+</section>	
+{% endblock %}

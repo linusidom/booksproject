@@ -1,0 +1,200 @@
+{% extends 'tagr/base.html' %}
+{% load staticfiles %}
+{% block body_block %}
+
+<section id='tagr_list'>
+	<div class='tagr_con'>
+	<h1>Think and Grow Rich Challenge</h1>
+	<br>
+
+	<p>Read the Book, reflect on the topic and track your own personal progress below</p>
+
+	<p><a href="{% static 'css/Think-And-Grow-Rich_2008.pdf' %}">Get the book!</a></p>
+
+
+	<h3>Chapter 1</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 1 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	<h3>Chapter 2</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 2 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	<h3>Chapter 3</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 3 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	<h3>Chapter 4</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 4 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	<h3>Chapter 5</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 5 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}		
+		{% endif %}
+	{% endfor %}
+	<h3>Chapter 6</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 6 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}		
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 7</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 7 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}		
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 8</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 8 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}	
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 9</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 9 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 10</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 10 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}	
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 11</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 11 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}	
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 12</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 12 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}	
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 13</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 13 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+
+	<h3>Chapter 14</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 14 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	
+	<h3>Chapter 15</h3>
+	{% for post in post_list %}	
+		{% if post.chapter == 15 %}
+			<h4><a href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+			{% if post.message %}
+			<div class='postmessage'>
+				<p>{{post.message}}</p><br>
+				<p>Last Updated: {{post.create_date}}</p>
+			</div>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	</div>
+</section>	
+{% endblock %}

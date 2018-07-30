@@ -1,0 +1,19 @@
+{% extends 'tagr/base.html' %}
+{% block body_block %}
+<section id='question'>
+	<h3>{{post.question}}</h3>
+	<p>{{post.message}}</p>
+	<p>{{post.create_date}}</p>
+	<p><a class='btn btn-success' href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">Update</a></p>
+	<ul>
+	{% if post.previous %}
+		<li><a class='btn btn-info' href="{% url 'tagr:post_detail' pk=post.previous.pk chapter=post.chapter %}">Previous Question</a></li>{% endif %}
+	{% if post.next %}
+		<li><a class='btn btn-primary' href="{% url 'tagr:post_detail' pk=post.next.pk chapter=post.chapter%}">Next Question</a></li>{% endif %}
+	
+	</ul>
+	<div class='clr'></div>
+	<br>
+	<a class="btn btn-warning" href="{% url 'tagr:post_list' %}">Back to Questions</a>
+</section>
+{% endblock %}

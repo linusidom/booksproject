@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+<h1>blog HTML</h1>
+
+{% if post_list %}
+	{% for post in post_list %}
+		<h4><a href="{% url 'blog:post_update' pk=post.pk chapter=post.chapter %}">{{post.question}}</a></h4>
+		<p>{{post.pk}} ___  {{post.chapter}}</p>
+	{% endfor %}
+{% endif %}
+{% endblock %}

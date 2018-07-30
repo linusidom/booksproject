@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}
+{% block body_block %}
+<section id='login'>
+<h1>Login</h1>
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input class='button' type="submit" value="Login">
+</form>
+<h3>Don't have an Account...Go ahead and <a href="{% url 'accounts:signup' %}">SignUp</a></h3>
+	
+</section>
+{% endblock %}

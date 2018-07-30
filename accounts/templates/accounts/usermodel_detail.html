@@ -1,0 +1,10 @@
+{% extends 'accounts/base.html' %}
+{% block body_block %}
+<h1>Profile HTML</h1>
+
+<p>{{usermodel.pk}}</p>
+<p>{{usermodel.username}}</p>
+
+<a class='btn btn-info' href="{% url 'accounts:user_update' pk=usermodel.pk%}">Update</a>
+<a class='btn btn-primary' href="{% url 'accounts:user_delete' pk=usermodel.pk%}">Delete</a>
+{% endblock %}

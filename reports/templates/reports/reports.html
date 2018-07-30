@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+
+
+<section id='reports'>
+<h1>Reports</h1>
+	<div class='report_date'>
+		<form method="POST" action="{% url 'reports:report_list' %}">
+			{% csrf_token %}
+			<input type="date" name="startdate" required>
+			<input type="date" name="enddate" required>
+			<input class='btn_report_date' type="submit" value="Submit">
+		</form>
+
+		{% if default %}
+			<p>Default is the last 7 Days</p>
+		{% endif %}
+	</div>
+
+	{% if nodata%}
+		<p>Sorry but there is no information for the selected time range.  Please select another date range</p>
+
+	{% else %}
+		<div class='report_summary'>
+			<p>Your getting {{calories_to_dollars|floatformat:2}} calories per dollar spent!</p>
+			<p>Your within {{offset|floatformat:0}}% of your Goal!</p>
+			<p>If you keep this up you could be at:</p>
+			<p>{{off_week|floatformat:2}} lbs in 7 days</p>
+			<p>{{off_weeks|floatformat:2}} lbs in 2 weeks</p>
+			<p>{{off_month|floatformat:2}} lbs in 1 Month</p>	
+		</div>
+
+		<div class='reports_foods'>
+			<h3>Foods</h3>
+			{% for food in foods %}
+				<p><a href="{% url 'foods:food_detail' pk=food.pk %}">Item {{food.food_item}} Date:{{food.create_date}} Calories:{{food.calories}}</a></p>
+			{% endfor %}
+		</div>
+
+		<div class='reports_expenses'>
+			<h3>Expenses</h3>
+			{% for expense in expenses %}
+				<p><a href="{% url 'expenses:expense_detail' pk=expense.pk %}">Item {{expense.expense_item}} Date:{{expense.create_date}} Amount:{{expense.amount}}</p></a>
+			{% endfor %}
+		</div>
+
+		<div class='reports_exercises'>
+			<h3>exercises</h3>
+			{% for exercise in exercises %}
+				<p><a href="{% url 'exercises:exercise_detail' pk=exercise.pk %}">Item {{exercise.exercise_type}} Date:{{exercise.create_date}} {{exercise.minutes}} {{exercise.calories_burned}}</a></p>
+			{% endfor %}
+		</div>
+	{% endif %}
+</section>
+{% endblock %}

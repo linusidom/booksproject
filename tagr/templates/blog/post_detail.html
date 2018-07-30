@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+<h1>blog HTML</h1>
+
+<h3>{{post.question}}</h3>
+<p>{{post.message}}</p>
+<p>{{post.create_date}}</p>
+<p>{{post.publish_status}}</p>
+<p><a href="{% url 'blog:post_update' pk=post.pk chapter=post.chapter %}">Update</a></p>
+
+{% if post.previous %}
+	<li><a href="{% url 'blog:post_detail' pk=post.previous.pk chapter=post.chapter %}">Prev« {{post.previous}}</a></li>{% endif %}
+{% if post.next %}
+	<li><a href="{% url 'blog:post_detail' pk=post.next.pk chapter=post.chapter%}">Next {{post.next}} »</a></li>{% endif %}
+
+
+{% endblock %}

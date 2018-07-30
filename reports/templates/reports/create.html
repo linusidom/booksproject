@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<section id='create_log_entry'>
+	<h1>Create a new entry</h1>
+
+	<form method="POST">
+		{% csrf_token %}
+		<div class='entry'>
+			<h3>Expense Log</h3>
+			{{expense_form.as_p}}
+		</div>
+		<div class='entry'>
+			<h3>Food Log</h3>
+			{{food_form.as_p}}
+		</div>
+		<div class='entry'>
+			<h3>Exercise Log</h3>
+			{{exercise_form.as_p}}
+		</div>
+		<input class='btn_btn_submit' type="submit" value="Create!">
+	</form>
+
+</section>
+{% endblock %}
