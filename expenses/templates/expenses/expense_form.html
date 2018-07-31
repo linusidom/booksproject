@@ -4,8 +4,8 @@
 <h1>expenses UPDATE</h1>
 <form method="POST">
 	{% csrf_token%}
-	{{expense_form}}
-	<input class='btn btn-primary' type="submit" value="Submit">
+	{{form.as_p}}
+	<input class='update_button' type="submit" value="Submit">
 </form>
 </section>
 

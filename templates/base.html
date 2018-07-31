@@ -44,11 +44,14 @@
 					<li class='app_title'>Think and Grow Rich</li>
 					<li><a href="{% url 'tagr:post_list' %}">Questions</a></li>
 					<li class='app_title'>Tracker App</li>
-					<li><a href="{% url 'reports:create_new_entry' %}">Create New Entry</a></li>
-					<li><a href="{% url 'reports:report_list' %}">Reports</a></li>
-					<li><a href="{% url 'expenses:expense_list' %}">Expenses</a></li>
-					<li><a href="{% url 'exercises:exercise_list' %}">Exercises</a></li>
-					<li><a href="{% url 'foods:food_list' %}">Food</a></li>
+					<li><a href="{% url 'reports:report_list' %}">Summary Report</a></li>
+					<li><a href="{% url 'foods:food_list' %}">Food List</a></li>
+					<li><a href="{% url 'expenses:expense_list' %}">Expense List</a></li>
+					<li><a href="{% url 'exercises:exercise_list' %}">Exercise List</a></li>
+					<li class='app_title'>Tracker App New Entry</li>
+					<li><a href="{% url 'foods:food_create' %}">New Food Item</a></li>
+					<li><a href="{% url 'expenses:expense_create' %}">New Expense Item</a></li>
+					<li><a href="{% url 'exercises:exercise_create' %}">New Exercise Item</a></li>
 					{% if user.is_authenticated %}
 					<li class='app_title'>My Account</li>
 					<li><a href="{% url 'accounts:user_detail' pk=user.pk %}">My Account</a></li>

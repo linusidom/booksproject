@@ -11,13 +11,3 @@ class FoodForm(forms.ModelForm):
 		model = Food
 		fields = ['food_item','servings','calories','carbs','protein','fat','create_date']
 
-	def __init__(self, *args, **kwargs):
-		super(ExerciseForm, self).__init__(*args, **kwargs)
-		self.fields['food_item'].required = False
-		self.fields['servings'] = False
-		self.fields['calories'] = False
-		self.fields['carbs'] = False
-		self.fields['protein'] = False
-		self.fields['fat'] = False
-		
-		

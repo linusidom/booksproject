@@ -866,7 +866,8 @@ ul.the-icons {
 }
 #login .button,
 #signup .button,
-#question_update .question_udpate_button
+#question_update .question_udpate_button,
+.update_button
  {
 	width: 100%;
 	border: 1px white solid;
@@ -883,6 +884,8 @@ ul.the-icons {
 #signup form label{
 	width: 150px;
 }
+
+
 
 /*Intro Page*/
 #journalapp{
@@ -1126,11 +1129,10 @@ div.cform-response-output {
 
 
 /*Foods, Expenses, Exercise*/
-.food_header,
-.expense_header,
-.exercise_header {
-	min-height: 80px;
-	border-bottom: 3px solid #3b5998;
+#food_list,
+#expense_list,
+#exercise_list{
+	padding: 0px;
 }
 
 .food_header h1,
@@ -1144,8 +1146,11 @@ div.cform-response-output {
 .expense_header a,
 .exercise_header a {
 	float: right;
-	padding: 30px 40px 0px 0px;
+	padding: 10px;
 	font-size: 16px;
+	background: #5C9F24;
+	color: white;
+	border-radius: 10%;
 }
 
 /*Reports*/

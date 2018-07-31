@@ -39,6 +39,7 @@ class ExerciseCreateView(LoginRequiredMixin,CreateView):
 	model = Exercise
 	form_class = ExerciseForm
 	login_url = 'accounts:user_login'
+	success_url = reverse_lazy('exercises:exercise_list')
 
 	def form_valid(self, form):
 		form.instance.user = self.request.user
@@ -48,6 +49,7 @@ class ExerciseUpdateView(LoginRequiredMixin, UpdateView):
 	model = Exercise
 	form_class = ExerciseForm
 	login_url = 'accounts:user_login'
+	success_url = reverse_lazy('exercises:exercise_list')
 
 class ExerciseDeleteView(LoginRequiredMixin, DeleteView):
 	model = Exercise

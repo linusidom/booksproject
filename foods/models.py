@@ -11,15 +11,15 @@ User = get_user_model()
 class Food(models.Model):
 	user = models.ForeignKey(User, related_name='food_user')
 	food_item = models.CharField(max_length= 50)
-	calories = models.IntegerField()
-	servings = models.IntegerField()
+	calories = models.IntegerField(default = 500)
+	servings = models.IntegerField(default = 1)
 	create_date = models.DateField(default=datetime.datetime.now)
 	fat = models.IntegerField(default=100)
 	protein = models.IntegerField(default=200)
 	carbs = models.IntegerField(default=200)
 
 	def __str__(self):
-		return self.user.username
+		return self.food_item
 
 	def get_absolute_url(self):
 		return reverse('foods:food_detail', kwargs={'pk':self.pk})

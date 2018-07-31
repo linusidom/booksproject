@@ -22,13 +22,13 @@ class Expense(models.Model):
 		)
 
 	user = models.ForeignKey(User, related_name='exp_user')
-	amount = models.IntegerField()
+	amount = models.IntegerField(default=10)
 	expense_item = models.CharField(max_length= 50)
 	expense_type = models.CharField(max_length =15, choices=CATEGORY, default=FOOD)
 	create_date = models.DateField(default=datetime.datetime.now)
 	
 	def __str__(self):
-		return self.user.username
+		return self.expense_item
 
 	def get_absolute_url(self):
 		return reverse('expenses:expense_detail', kwargs={'pk':self.pk})

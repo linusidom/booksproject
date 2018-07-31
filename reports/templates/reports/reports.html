@@ -23,12 +23,19 @@
 
 	{% else %}
 		<div class='report_summary'>
-			<p>Your getting {{calories_to_dollars|floatformat:2}} calories per dollar spent!</p>
-			<p>Your within {{offset|floatformat:0}}% of your Goal!</p>
-			<p>If you keep this up you could be at:</p>
-			<p>{{off_week|floatformat:2}} lbs in 7 days</p>
-			<p>{{off_weeks|floatformat:2}} lbs in 2 weeks</p>
-			<p>{{off_month|floatformat:2}} lbs in 1 Month</p>	
+
+			{% if calories_to_dollars %}
+				<p>Your getting {{calories_to_dollars|floatformat:2}} calories per dollar spent!</p>
+			{% endif %}
+			{% if offset %}
+				<p>Your within {{offset|floatformat:0}}% of your Goal!</p>
+			{% endif %}
+			{% if off_week %}
+				<p>If you keep this up you could be at:</p>
+				<p>{{off_week|floatformat:2}} lbs in 7 days</p>
+				<p>{{off_weeks|floatformat:2}} lbs in 2 weeks</p>
+				<p>{{off_month|floatformat:2}} lbs in 1 Month</p>
+			{% endif %}				
 		</div>
 
 		<div class='reports_foods'>

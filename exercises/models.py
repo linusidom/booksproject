@@ -18,13 +18,13 @@ class Exercise(models.Model):
 		)
 
 	user = models.ForeignKey(User, related_name='exc_user')
-	minutes = models.IntegerField()
-	calories_burned = models.IntegerField()
+	minutes = models.IntegerField(default=30)
+	calories_burned = models.IntegerField(default=300)
 	exercise_type = models.CharField(max_length =15, choices=CATEGORY, default=CARDIO)
 	create_date = models.DateField(default=datetime.datetime.now)
 
 	def __str__(self):
-		return self.user.username
+		return 'Exercise Type %s Calories Burned %s Minutes %s' % (self.exercise_type, self.calories_burned, self.minutes)
 
 	def get_absolute_url(self):
 		return reverse('exercises:exercise_detail', kwargs={'pk':self.pk})
