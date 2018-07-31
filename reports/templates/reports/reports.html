@@ -53,7 +53,7 @@
 		</div>
 
 		<div class='reports_exercises'>
-			<h3>exercises</h3>
+			<h3>Exercises</h3>
 			{% for exercise in exercises %}
 				<p><a href="{% url 'exercises:exercise_detail' pk=exercise.pk %}">Item {{exercise.exercise_type}} Date:{{exercise.create_date}} {{exercise.minutes}} {{exercise.calories_burned}}</a></p>
 			{% endfor %}
