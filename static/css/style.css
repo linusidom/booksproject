@@ -1391,6 +1391,7 @@ img.pull-left{
 	}
 	.side-nav {
 		background-color: #111;
+		z-index: 1;
 	}
 	section#intro{
 		text-align: center;
