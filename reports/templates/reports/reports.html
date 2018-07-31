@@ -26,15 +26,21 @@
 
 			{% if calories_to_dollars %}
 				<p>Your getting {{calories_to_dollars|floatformat:2}} calories per dollar spent!</p>
+			{% else %}
+				<p>Once you Input a few Entries into Both Expenses and Foods we an find out How many calories you're getting per amount Spent</p>
 			{% endif %}
 			{% if offset %}
 				<p>Your within {{offset|floatformat:0}}% of your Goal!</p>
+			{% else %}
+				<p>Once you have a few Food Entries in, you can start to see how your meals track against your Personal Goals.  The Lower the Percentage the Closer you are to Eating on Target</p>
 			{% endif %}
 			{% if off_week %}
 				<p>If you keep this up you could be at:</p>
 				<p>{{off_week|floatformat:2}} lbs in 7 days</p>
 				<p>{{off_weeks|floatformat:2}} lbs in 2 weeks</p>
 				<p>{{off_month|floatformat:2}} lbs in 1 Month</p>
+			{% else %}
+				<p>I know you're working out!  But don't you want to know where you could be if you kept it up?  Track it and see</p>
 			{% endif %}				
 		</div>
 
