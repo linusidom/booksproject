@@ -1,60 +1,112 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block body_block %}
-<section id='showcase'>
-	<div class='show_con'>
-	<h1>Welcome to ModiSidoM</h1>
-	<h4>Here you can find</h4>
-	<h4>The Real Definitive Guide to the Best Books to Read and Music to Listen to Before you Die</h4>
-	<h4>Ever Read Think and Grow Rich...Now you can track your progress</h4>
-	<h4>A new way to examine your expenses and fitness!</h4>
+<section id="intro">
+	<ul id="slippry-slider">
+	  <li>
+		<a href="#slide1"><img src="{% static 'css/slide/1.jpg' %}" alt="Welcome to ModiSidoM!"></a>
+	  </li>
+	  <li>
+		<a href="#slide2"><img src="{% static 'css/slide/2.jpg' %}"  alt="The Definitive Guide to the Best Books to Read in Your Lifetime"></a>
+	  </li>
+	  <li>
+		<a href="#slide3"><img src="{% static 'css/slide/3.jpg' %}" alt="All the Greatest Music ever Created, Ranked and Sorted for Your Enjoyment!"></a>
+	  </li>
+	</ul>
+</section>
+
+<section id="about" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="heading">
+					<h3><span>About ModiSidoM</span></h3>
+				</div>
+				<div class="sub-heading">
+					<p>
+						 Creating Useful Applications that Expand Your Horizons
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="team-box">
+					<img src="{% static 'css/dummies/team1.jpg' %}" alt="" class="img-responsive" />
+					<div class="roles">
+						<h5><strong>Books to Read</strong></h5>
+						<p>
+							A compiled list of the Greatest Books to ever read in your Lifetime...
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="team-box">
+					<img src="{% static 'css/dummies/team2.jpg' %}" alt="" class="img-responsive" />
+					<div class="roles">
+						<h5><strong>Albums to Enjoy</strong></h5>
+						<p>
+							Aggregated List and Rankings of the Greatest Albums ever created to date!
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="team-box">
+					<img src="{% static 'css/dummies/team3.jpg' %}" alt="" class="img-responsive" />
+					<div class="roles">
+						<h5><strong>Think And Grow Rich</strong></h5>
+						<p>
+							Read the Book, Track your thoughts, Aim for a Higher Purpose
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="team-box">
+					<img src="{% static 'css/dummies/team4.jpg' %}" alt="" class="img-responsive" />
+					<div class="roles">
+						<h5><strong>Fitness Tracking</strong></h5>
+						<p>
+							Track the Quality of What You Eat, How Close to Your Nutritional Goals You Are and the Quality of the Calories you Consume
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
-<div class='clr'></div>
-
-<div id='newsletter'>
-
-</div>
-
-<div class='clr'></div>
-
-<section id='images'>
-	<div class='image'>
-		<a href="{% url 'books:index' %}">
-			<img src="{% static 'css/book.png' %}">
-			<h4>100+ Greatest Books and Albums Ranked</h4>
-			<p>A Compiled List of the 100 and more Greatests Novels to Read and Albums to Listen To</p>
-		</a>
-	</div>
-	<div class='image'>
-		<a href="{% url 'albums:index' %}">
-			<img src="{% static 'css/music.png' %}">
-			<h4>100+ Greatest Albums Ranked</h4>
-			<p>A Compiled List of the 100 and more Greatests Albums to groove to before you die...</p>
-		</a>
-	</div>
-	<div class='image'>
-		<a href="{% url 'index' %}">
-			<img src="{% static 'css/plus.png' %}">
-			<h4>Think and Grow Rich Challenge</h4>
-			<p>Read the Book, Document your journey</p>
-		</a>
-	</div>
-
-	<div class='image'>
-		<a href="{% url 'index' %}">
-			<img src="{% static 'css/plus.png' %}">
-			<h4>Fitness and Expense Tracker</h4>
-			<p>Ever thought about the Quality of your Expense?  Here's a new way to examine and track what you spend your money on</p>
-		</a>
+<section id="works" class="section gray">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="heading">
+					<h3><span>What We're Working On</span></h3>
+				</div>
+				<div class="sub-heading">
+					<p>
+					 With a variety of Hobbies and Technology at our Beck and Call, we not only have the ability to simply create but we can now adapt to ever changing landscape of increasing interests and challenges.
+						</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="grid effect" id="grid">
+				<li>
+					<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="{% static 'css/portfolio/1.jpg' %}">Books
+						<img src="{% static 'css/portfolio/1.jpg' %}" alt="" />
+					</a>						
+				</li>
+				<li><a href="{% static 'css/portfolio/2.jpg' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">Albums<img src="{% static 'css/portfolio/2.jpg' %}" alt="" /></a></li>
+				<li><a href="{% static 'css/portfolio/3.jpg' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">TAGR<img src="{% static 'css/portfolio/3.jpg' %}" alt="" /></a></li>
+				<li><a href="{% static 'css/portfolio/4.jpg' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">Fitness<img src="{% static 'css/portfolio/4.jpg' %}" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </section>
-
-<div class='clr'></div>
-
-
-
-
 
 {% endblock %}

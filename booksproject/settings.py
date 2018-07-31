@@ -34,7 +34,7 @@ DATABASES = {
     )
 }
 ALLOWED_HOSTS = ['modisidom.herokuapp.com']
-
+# ALLOWED_HOSTS = []
 
 # Application definition
 
