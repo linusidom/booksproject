@@ -853,20 +853,25 @@ ul.the-icons {
 	text-align: center;
 }
 
+#update_form li {
+	list-style: none;
+}
+
 #login form,
 #signup form,
-#update_form form {
+#update_form form{
 	margin: 30px 0px;
 	color: black;
 }
 
 #login form input,
 #signup form input,
-#update_form form input{
+#update_form form input {
 	padding: 10px;
 	margin: 10px;
 	width: 250px;
 }
+
 #login .button,
 #signup .button,
 #question_update .question_udpate_button,
@@ -885,10 +890,10 @@ ul.the-icons {
 #signup {
 	padding-top: 0px;
 }
-#signup form label{
+#signup form label,
+#update_form form label{
 	width: 150px;
 }
-
 
 
 /*Intro Page*/
