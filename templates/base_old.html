@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>ModiSidoM</title>
+	<meta name="description" content="Over 100 of the Best Books and Albums Aggregated from the Internet">
+	<meta name='keywords' content="books, albums, books to read before you die">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/dataTables.bootstrap.min.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
+</head>
+<body>
+
+<div class='container'>
+	<header>
+		<nav class='navbar'>
+			<span class='open-slide'>
+				<a href="#" onclick="openSlideMenu()">
+					<svg width='30' height='40'>
+						<path d='M0,5 30,5' stroke='#fff' stroke-width='5'/>
+						<path d='M0,14 30,14' stroke='#fff' stroke-width='5'/>
+						<path d='M0,23 30,23' stroke='#fff' stroke-width='5'/>	
+					</svg>
+				</a>
+			</span>
+			<h1>modiSidom</h1>	
+		</nav>
+		<div id='side-menu' class='side-nav'>
+			<a href="#" class='btn-close' onclick="closeSlideMenu()">&times;</a>
+			<a href="{% url 'index' %}"><span class='home'>Home</span></a>
+			<li class="dropbtn"><a href="{% url 'books:index' %}">Books</a></li>
+			<li><a href="{% url 'albums:index' %}">Albums</a></li>
+			<li class='app_title'>Think and Grow Rich</li>
+			<li><a href="{% url 'tagr:post_list' %}">Questions</a></li>
+			<li class='app_title'>Tracker App</li>
+			<li><a href="{% url 'reports:create_new_entry' %}">Create New Entry</a></li>
+			<li><a href="{% url 'reports:report_list' %}">Reports</a></li>
+			<li><a href="{% url 'expenses:expense_list' %}">Expenses</a></li>
+			<li><a href="{% url 'exercises:exercise_list' %}">Exercises</a></li>
+			<li><a href="{% url 'foods:food_list' %}">Food</a></li>
+			{% if user.is_authenticated %}
+			<li class='app_title'>My Account</li>
+			<li><a href="{% url 'accounts:user_detail' pk=user.pk %}">My Account</a></li>
+			<li><a href="{% url 'accounts:user_logout' %}">Logout</a></li>
+			{% endif %}
+			
+		</div>
+	</header>
+<div class='clr'></div>
+	{% block body_block%}
+	{% endblock %}
+<div class='clr'></div>
+
+<section id='contact'>
+	<div class='aboutme'>
+		<h3>Want to know more</h3>
+		<a  href="https://www.linkedin.com/in/sunilmodi" target="_blank"><img class='linkedin' src="{% static 'css/linkedin.png' %}"></a>
+		<a href="https://www.imdb.com/name/nm4182420/" target="_blank"><img class='imdb' src="{% static 'css/imdb.png' %}"></a>
+		<a href="https://www.youtube.com/watch?v=piPkvcLwIjI" target="_blank"><img class='youtube' src="{% static 'css/youtube.png' %}"></a>
+		<a href="https://www.amazon.com/Vipassana-Experience-Breathe-Observe-Repeat-ebook/dp/B01MT4XCG1?tag=modisoperan08-20" target="_blank"><img class='amazon' src="{% static 'css/amazon.png' %}"></a>
+
+		
+	</div>
+	<form method="POST" action="{% url 'contactform' %}">
+		{% csrf_token %}
+		<h5>Have Suggestion?  Anything You want to See?</h5>
+		<input type="text" name='name' placeholder="Name..."><br>
+		<input type="email" name='email' placeholder="Email..."><br>
+		<textarea class='message' name='message' placeholder="What's on Your Mind...?"></textarea><br>
+		<button class='btn_contact'>Contact Me</button>
+	</form>
+	<div class='clr'></div>
+</section>
+<div class='clr'></div>
+<footer>
+	<p>modiSidom &copy; 2018 </p>
+</footer>
+
+</div>
+<script src="{% static 'css/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'css/jquery.dataTables.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'css/dataTables.bootstrap.min.js' %}"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".table").DataTable({
+        	"order": [[ 0, "desc" ]]
+    	});
+	});
+	function openSlideMenu(){
+		document.getElementById('side-menu').style.width = '250px';
+		document.getElementById('main').style.marginLeft = '250px';
+			
+	}
+	function closeSlideMenu(){
+		document.getElementById('side-menu').style.width = '0px';
+		document.getElementById('main').style.marginLeft = '0px';
+			
+	}
+</script>
+</body>
+</html>

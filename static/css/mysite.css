@@ -99,10 +99,6 @@ header .side-nav {
 	overflow-y: scroll;
 }
 
-header .side-nav li{
-	list-style: none;
-}
-
 header .side-nav .app_title {
 	padding: 10px 0px 10px 20px;
 	color: #1eab75;
