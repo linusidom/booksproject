@@ -867,8 +867,9 @@ ul.the-icons {
 #login .button,
 #signup .button,
 #question_update .question_udpate_button,
-#update_form form .update_button
- {
+#update_form form .update_button,
+#account_update form .update_button
+{
 	width: 100%;
 	border: 1px white solid;
 	background-color: #5C9F24;

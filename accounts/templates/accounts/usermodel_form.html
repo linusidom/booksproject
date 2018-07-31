@@ -1,11 +1,11 @@
 {% extends 'accounts/base.html' %}
 {% block body_block %}
-<section id='account_update'>
-<h1>Update</h1>
+<section id='update_form'>
+<h1>Account Update</h1>
 <form method="POST">
 	{% csrf_token %}
 	{{form.as_p}}
-	<input class='button' type="submit" value="Update">
+	<input class='create_button' type="submit" value="Update">
 </form>
 </section>
 {% endblock %}
