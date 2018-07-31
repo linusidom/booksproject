@@ -7,10 +7,10 @@
 		<a href="{% url 'intro' %}"><img src="{% static 'css/booksback_1.jpg' %}" alt="Welcome to ModiSidoM!"></a>
 	  </li>
 	  <li>
-		<a href="{% url 'books:book_list' %}"><img src="{% static 'css/booksback_1.jpg' %}"  alt="The Definitive Guide to the Best Books to Read in Your Lifetime"></a>
+		<a href="{% url 'books:index' %}"><img src="{% static 'css/booksback_1.jpg' %}"  alt="The Definitive Guide to the Best Books to Read in Your Lifetime"></a>
 	  </li>
 	  <li>
-		<a href="{% url 'albums:album_list' %}"><img src="{% static 'css/vinyl background.jpg' %}" alt="All the Greatest Music ever Created, Ranked and Sorted for Your Enjoyment!"></a>
+		<a href="{% url 'albums:index' %}"><img src="{% static 'css/vinyl background.jpg' %}" alt="All the Greatest Music ever Created, Ranked and Sorted for Your Enjoyment!"></a>
 	  </li>
 	</ul>
 </section>
@@ -34,7 +34,7 @@
 				<div class="team-box">
 					<img src="{% static 'css/book.png' %}" alt="" class="img-responsive" />
 					<div class="roles">
-						<a href="{% url 'books:book_list' %}"><h5><strong>Books to Read</strong></h5>
+						<a href="{% url 'books:index' %}"><h5><strong>Books to Read</strong></h5>
 						<p>
 							A compiled list of the Greatest Books to ever read in your Lifetime...
 						</p></a>
@@ -45,7 +45,7 @@
 				<div class="team-box">
 					<img src="{% static 'css/music.png' %}" alt="" class="img-responsive" />
 					<div class="roles">
-						<a href="{% url 'albums:album_list' %}"><h5><strong>Albums to Enjoy</strong></h5>
+						<a href="{% url 'albums:index' %}"><h5><strong>Albums to Enjoy</strong></h5>
 						<p>
 							Aggregated List and Rankings of the Greatest Albums ever created to date!
 						</p></a>
@@ -96,11 +96,11 @@
 			<div class="col-md-12">
 				<ul class="grid effect" id="grid">
 				<li>
-					<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="{% url 'books:book_list' %}">Books
+					<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="{% url 'books:index' %}">Books
 						<img src="{% static 'css/portfolio/1.jpg' %}" alt="" />
 					</a>						
 				</li>
-				<li><a href="{% url 'albums:album_list' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">Albums<img src="{% static 'css/portfolio/2.jpg' %}" alt="" /></a></li>
+				<li><a href="{% url 'albums:index' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">Albums<img src="{% static 'css/portfolio/2.jpg' %}" alt="" /></a></li>
 				<li><a href="{% url 'tagr:tagr_list' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">TAGR<img src="{% static 'css/portfolio/3.jpg' %}" alt="" /></a></li>
 				<li><a href="{% url 'reports:report_list' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">Fitness<img src="{% static 'css/portfolio/4.jpg' %}" alt="" /></a></li>
 				</ul>
