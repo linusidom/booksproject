@@ -362,6 +362,7 @@ section#intro  {
 	font-size: 48px;
 	color: #fff;
 	line-height: 1.1em;
+	text-align: center;
 
 }
 /* ==== general main content style ==== */
@@ -1394,7 +1395,6 @@ img.pull-left{
 		z-index: 1;
 	}
 	section#intro{
-		text-align: center;
 		padding:0;
 	}
 	.sy-caption-wrap {
@@ -1410,6 +1410,7 @@ img.pull-left{
 		color: #fff;
 		top: 30%;
 		line-height: 1.1em;
+		text-align: center;
 	}
 	.col-md-6 {
 		margin-bottom: 30px;
