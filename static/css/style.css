@@ -846,20 +846,23 @@ ul.the-icons {
 
 /*Login and Signup*/
 /*Login*/
-#login{
+#login,
+#update_form{
 	padding-top: 0px;
 	margin: 30px 0px;
 	text-align: center;
 }
 
 #login form,
-#signup form {
+#signup form,
+#update_form form {
 	margin: 30px 0px;
 	color: black;
 }
 
 #login form input,
-#signup form input{
+#signup form input,
+#update_form form input{
 	padding: 10px;
 	margin: 10px;
 	width: 250px;
@@ -1232,20 +1235,7 @@ div.cform-response-output {
 	padding: 30px 0px 30px 100px;
 }
 
-#update_form {
-	text-align: center;
-	padding: 30px;
-}
 
-#update_form form label{
-	width: 200px;
-	padding: 0px 20px 0 0;
-}
-
-#update_form form input{
-	width: 300px;
-
-}
 
 /* Footer */
 
