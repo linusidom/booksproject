@@ -10,7 +10,7 @@ body {
 .clr{clear:both;}
 
 .container {
-	width: 85% !important; /*Override width from dataTables*/
+	width: 95% !important; /*Override width from dataTables*/
 	margin: 0 auto;
 }
 
@@ -99,19 +99,16 @@ header .side-nav {
 	overflow-y: scroll;
 }
 
-header .side-nav li{
-	list-style: none;
-}
-
 header .side-nav .app_title {
 	padding: 10px 0px 10px 20px;
 	color: #1eab75;
+	font-size: 26px;
 }
 
 header .side-nav a{
 	padding: 10px 10px 20px 60px;
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 22px;
 	color: #ccc;
 	display: block;
 	transition: 0.3s;
@@ -559,6 +556,28 @@ header .side-nav .home {
 	text-align: left;
 }
 
+
+#food_detail,
+#exercise_detail,
+#expense_detail {
+
+	padding: 30px 0px 30px 100px;
+}
+
+#update_form {
+	text-align: center;
+	padding: 30px;
+}
+
+#update_form form label{
+	width: 200px;
+	padding: 0px 20px 0 0;
+}
+
+#update_form form input{
+	width: 300px;
+
+}
 
 
 /*Footer*/
