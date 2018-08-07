@@ -4,7 +4,7 @@
 <h1>Delete Account</h1>
 <form method="POST">
 	{% csrf_token %}
-	Are you sure you want to Delete your account? {{object}}<br>
+	Are you sure you want to Delete your account and all your Progress {{object}}?<br>
 	<input class='btn btn-danger' type="submit" value="Delete">
 </form>
 </section>

@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse_lazy
 # Create your views here.
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
 from accounts.models import UserModel
-from accounts.forms import UserForm
+from accounts.forms import UserForm, UserUpdateForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login, logout, authenticate
 
@@ -43,7 +43,7 @@ class SignUpCreateView(CreateView):
 class UserModelUpdateView(LoginRequiredMixin, UpdateView):
 	model = UserModel
 	login_url = 'accounts/login.html'
-	form_class = UserForm
+	form_class = UserUpdateForm
 
 class UserModelDeleteView(LoginRequiredMixin, DeleteView):
 	model = UserModel

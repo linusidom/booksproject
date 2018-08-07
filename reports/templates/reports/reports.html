@@ -45,24 +45,113 @@
 		</div>
 
 		<div class='reports_foods'>
-			<h3>Foods</h3>
-			{% for food in foods %}
-				<p><a href="{% url 'foods:food_detail' pk=food.pk %}">Item {{food.food_item}} Date:{{food.create_date}} Calories:{{food.calories}}</a></p>
-			{% endfor %}
+			{% if foods %}
+			<section id='food_list'>
+				<div class='food_header'>
+					<h1>Foods</h1>
+					<a class='create_button' href="{% url 'foods:food_create' %}">Create a Food</a>
+				</div>
+				<div class='clr'></div>
+				<div class='food_table'>
+				
+					<table class='table'>
+						<thead>
+							<tr>
+								<td>Log Date</td>
+								<td>Item</td>
+								<td>Calories</td>
+								<td>Servings</td>
+								<td>Carbs</td>
+								<td>Protein</td>
+								<td>Fat</td>
+							</tr>
+						</thead>
+						<tbody>
+						{% for food in foods %}
+							<tr>
+								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.create_date}}</a></td>
+								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.food_item}}</a></td>
+								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.calories}}</a></td>
+								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.servings}}</a></td>
+								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.carbs}}</a></td>
+								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.protein}}</a></td>
+								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.fat}}</a></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% endif %}
+				</div>
+			</section>
 		</div>
 
 		<div class='reports_expenses'>
-			<h3>Expenses</h3>
-			{% for expense in expenses %}
-				<p><a href="{% url 'expenses:expense_detail' pk=expense.pk %}">Item {{expense.expense_item}} Date:{{expense.create_date}} Amount:{{expense.amount}}</p></a>
-			{% endfor %}
+			{% if expenses %}
+			<section id='expense_list'>
+				<div class='expense_header'>
+					<h1>Expenses</h1>
+					<a class='create_button' href="{% url 'expenses:expense_create' %}">Create an Expense</a>
+				</div>
+				<div class='clr'></div>
+				<div class='expense_table'>
+				
+					<table class='table'>
+						<thead>
+							<tr>
+								<td>Log Date</td>
+								<td>Item</td>
+								<td>Category</td>
+								<td>Amount</td>
+							</tr>
+						</thead>
+						<tbody>
+						{% for expense in expenses %}
+							<tr>
+								<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.create_date}}</a></td>
+								<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_item}}</a></td>
+								<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_type}}</a></td>
+								<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.amount}}</a></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% endif %}
+				</div>
+			</section>
 		</div>
 
 		<div class='reports_exercises'>
-			<h3>Exercises</h3>
-			{% for exercise in exercises %}
-				<p><a href="{% url 'exercises:exercise_detail' pk=exercise.pk %}">Item {{exercise.exercise_type}} Date:{{exercise.create_date}} {{exercise.minutes}} {{exercise.calories_burned}}</a></p>
-			{% endfor %}
+			{% if exercises %}
+			<section id='exercise_list'>
+				<div class='exercise_header'>
+					<h1>Exercises</h1>
+					<a class='create_button' href="{% url 'exercises:exercise_create' %}">Create an Exercise</a>
+				</div>
+				<div class='clr'></div>
+				<div class='exercise_table'>
+					<table class='table'>
+						<thead>
+							<tr>
+								<td>Log Date</td>
+								<td>Exercise Type</td>
+								<td>Calories</td>
+								<td>Minutes</td>
+							</tr>
+						</thead>
+						<tbody>
+						{% for exercise in exercises %}
+							<tr>
+								<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.create_date}}</a></td>
+								<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.exercise_type}}</a></td>
+								<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.calories_burned}}</a></td>
+								<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.minutes}}</a></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% endif %}
+				</div>
+			</section>	
 		</div>
 	{% endif %}
 </section>

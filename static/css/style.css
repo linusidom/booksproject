@@ -328,42 +328,20 @@ header .side-nav .home {
 /* =======================================
 2. Section: Intro
 ======================================== */
-section#intro{
-	position:relative;
-	width:100%;
-	height:auto;
-	margin:0;
-}
-
-section#intro{
-	padding:0 0 0 0;
-
-}
-
-section#intro.inner {
-	padding:140px 0 30px;
-}
-
-section#intro.inner h2 strong  {
-	color:#fff;
-}
-section#intro.inner h2  {
-	font-size:32px;
-}
-
-
-section#intro  {
+#intro{
+	background: url('mainwallpaper.jpg') no-repeat 0 -20px;
+	background-size: cover;
 	text-align:center;
+	height: 400px;
 }
 
-.sy-caption-wrap .sy-caption {
-	position: relative;
-	/*left: -50%;*/
-	font-size: 48px;
-	color: #fff;
-	line-height: 1.1em;
-
+#intro h1 {
+	padding: 20px 0px 0px 0px;
+	margin: 0 auto;
+	color: white;
 }
+
+
 /* ==== general main content style ==== */
 #maincontent.section {
 	padding:30px 0 40px 0;
@@ -1005,7 +983,8 @@ ul.the-icons {
 
 
 /*DATA Tables*/
-#DataTables_Table_0_wrapper{
+/*#DataTables_Table_0_wrapper*/
+.dataTables_wrapper{
 	/*margin: 30px 0px 30px 0px;*/
 	padding: 15px;
 	border: 3px solid #3b5998;
