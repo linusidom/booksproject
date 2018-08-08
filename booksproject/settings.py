@@ -45,6 +45,7 @@ ALLOWED_HOSTS = ['modisidom.herokuapp.com']
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
