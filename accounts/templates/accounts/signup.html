@@ -1,11 +1,10 @@
 {% extends 'accounts/base.html' %}
 {% block body_block %}
-<section id='signup'>
 <h1>Signup FORM</h1>
 <form method="POST">
 	{% csrf_token %}
 	{{form.as_p}}
-	<input class='button' type="submit" value="Sign Up">
+	<input class='update_button' type="submit" value="Sign Up">
 </form>
-</section>
+
 {% endblock %}
