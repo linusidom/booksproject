@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^intro/$', views.IntroTemplateView.as_view(), name ='intro'),
 
 
-    # url(r'^tagr/',include('tagr.urls', namespace='tagr')),
+    url(r'^tagr/',include('tagr.urls', namespace='tagr')),
     
     # Testing Social Login
     url(r'^accounts/',include('accounts.urls', namespace='accounts')),
@@ -41,10 +41,10 @@ urlpatterns = [
     url(r'^contact/$', views.contactform, name='contactform'),
     url(r'^apiinfo/', views.APIInfoTemplateView.as_view(), name='apiinfo'),
 
-    # url(r'^foods/', include('foods.urls',namespace = 'foods')),
-    # url(r'^expenses/', include('expenses.urls',namespace = 'expenses')),
-    # url(r'^exercises/', include('exercises.urls',namespace = 'exercises')),
-    # url(r'^reports/', include('reports.urls',namespace = 'reports')),
+    url(r'^foods/', include('foods.urls',namespace = 'foods')),
+    url(r'^expenses/', include('expenses.urls',namespace = 'expenses')),
+    url(r'^exercises/', include('exercises.urls',namespace = 'exercises')),
+    url(r'^reports/', include('reports.urls',namespace = 'reports')),
 
     # API
     # url(r'^api_foods/', include('foods.api.urls',namespace = 'api_foods')),

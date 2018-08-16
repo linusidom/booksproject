@@ -64,12 +64,12 @@ INSTALLED_APPS = [
     # My apps
     'books',
     'albums',
-    # 'tagr',
+    'tagr',
     'accounts',
-    # 'foods',
-    # 'expenses',
-    # 'exercises',
-    # 'reports',
+    'foods',
+    'expenses',
+    'exercises',
+    'reports',
 ]
 
 
