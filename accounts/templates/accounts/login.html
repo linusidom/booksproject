@@ -2,6 +2,7 @@
 {% block body_block %}
 <section id='main' class='login'>
 <h1>Login</h1>
+<p><li>Please use your email address as Login</li></p>
 <form method="POST">
 	{% csrf_token %}
 	{{form.as_p}}

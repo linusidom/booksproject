@@ -32,10 +32,10 @@ urlpatterns = [
     
     # Testing Social Login
     url(r'^accounts/',include('accounts.urls', namespace='accounts')),
-    url(r'^account/', include('allauth.urls')),
+    # url(r'^account/', include('allauth.urls')),
 
-    url(r'^api_tagr/',include('tagr.api.urls', namespace = 'api_tagr')),
-    url(r'^api_accounts/',include('accounts.api.urls', namespace = 'api_accounts')),
+    # url(r'^api_tagr/',include('tagr.api.urls', namespace = 'api_tagr')),
+    # url(r'^api_accounts/',include('accounts.api.urls', namespace = 'api_accounts')),
     url(r'^loggedin/$', views.LoggedInTemplateView.as_view(), name='loggedin'),
     url(r'^loggedout/$', views.LoggedOutTemplateView.as_view(), name='loggedout'),
     url(r'^contact/$', views.contactform, name='contactform'),

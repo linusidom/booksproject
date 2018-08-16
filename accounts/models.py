@@ -2,9 +2,9 @@
 from __future__ import unicode_literals
 from django.shortcuts import reverse
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
-class UserModel(User):
+class UserModel(AbstractUser):
 	ideal_fat = models.IntegerField(default=20)
 	ideal_protein = models.IntegerField(default=40)
 	ideal_carbs = models.IntegerField(default=40)
@@ -13,7 +13,7 @@ class UserModel(User):
 	current_weight = models.IntegerField(default=185)
 
 	def __str__(self):
-		return self.username
+		return self.email
 
 	def get_absolute_url(self):
 		return reverse('accounts:user_detail', kwargs={'pk':self.pk})

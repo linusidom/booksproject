@@ -38,7 +38,12 @@
 			<div class="navigation">
 				<div id='side-menu' class='side-nav'>
 					<a href="#" class='btn-close' onclick="closeSlideMenu()">&times;</a>
-					<a href="{% url 'index' %}"><span class='home'>Home</span></a>
+					{% if user.is_authenticated %}
+					<li class='app_title'>My Account</li>
+					<li><a href="{% url 'accounts:user_detail' pk=user.pk %}">My Account</a></li>
+					<li><a href="{% url 'accounts:user_logout' %}">Logout</a></li>
+					{% endif %}
+					<li><a class="app_title" href="{% url 'index' %}"><span class='home'>Home</span></a></li>
 					<li class="dropbtn"><a href="{% url 'books:index' %}">Books</a></li>
 					<li><a href="{% url 'albums:index' %}">Albums</a></li>
 					<li class='app_title'>Think and Grow Rich</li>
@@ -48,15 +53,10 @@
 					<li><a href="{% url 'foods:food_list' %}">Food List</a></li>
 					<li><a href="{% url 'expenses:expense_list' %}">Expense List</a></li>
 					<li><a href="{% url 'exercises:exercise_list' %}">Exercise List</a></li>
-					<li class='app_title'>Tracker App New Entry</li>
-					<li><a href="{% url 'foods:food_create' %}">New Food Item</a></li>
-					<li><a href="{% url 'expenses:expense_create' %}">New Expense Item</a></li>
-					<li><a href="{% url 'exercises:exercise_create' %}">New Exercise Item</a></li>
-					{% if user.is_authenticated %}
-					<li class='app_title'>My Account</li>
-					<li><a href="{% url 'accounts:user_detail' pk=user.pk %}">My Account</a></li>
-					<li><a href="{% url 'accounts:user_logout' %}">Logout</a></li>
-					{% endif %}
+					<li><a href="{% url 'foods:food_create' %}"> - New Food Item</a></li>
+					<li><a href="{% url 'expenses:expense_create' %}"> - New Expense Item</a></li>
+					<li><a href="{% url 'exercises:exercise_create' %}"> - New Exercise Item</a></li>
+					
 				</div>
 			</div>
   		</div>
