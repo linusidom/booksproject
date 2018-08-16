@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^intro/$', views.IntroTemplateView.as_view(), name ='intro'),
 
 
-    url(r'^tagr/',include('tagr.urls', namespace='tagr')),
+    # url(r'^tagr/',include('tagr.urls', namespace='tagr')),
     
     # Testing Social Login
     url(r'^accounts/',include('accounts.urls', namespace='accounts')),
@@ -41,15 +41,15 @@ urlpatterns = [
     url(r'^contact/$', views.contactform, name='contactform'),
     url(r'^apiinfo/', views.APIInfoTemplateView.as_view(), name='apiinfo'),
 
-    url(r'^foods/', include('foods.urls',namespace = 'foods')),
-    url(r'^expenses/', include('expenses.urls',namespace = 'expenses')),
-    url(r'^exercises/', include('exercises.urls',namespace = 'exercises')),
-    url(r'^reports/', include('reports.urls',namespace = 'reports')),
+    # url(r'^foods/', include('foods.urls',namespace = 'foods')),
+    # url(r'^expenses/', include('expenses.urls',namespace = 'expenses')),
+    # url(r'^exercises/', include('exercises.urls',namespace = 'exercises')),
+    # url(r'^reports/', include('reports.urls',namespace = 'reports')),
 
     # API
-    url(r'^api_foods/', include('foods.api.urls',namespace = 'api_foods')),
-    url(r'^api_expenses/', include('expenses.api.urls',namespace = 'api_expenses')),
-    url(r'^api_exercises/', include('exercises.api.urls',namespace = 'api_exercises')),
+    # url(r'^api_foods/', include('foods.api.urls',namespace = 'api_foods')),
+    # url(r'^api_expenses/', include('expenses.api.urls',namespace = 'api_expenses')),
+    # url(r'^api_exercises/', include('exercises.api.urls',namespace = 'api_exercises')),
 
     # Password Reset
     url(r'^password_reset/$', auth_views.PasswordResetView.as_view(template_name='accounts/password_reset_form.html', email_template_name = 'accounts/password_reset_email.html', subject_template_name='accounts/password_reset_subject.txt'), name='password_reset'),
