@@ -13,3 +13,8 @@ class UserUpdateForm(forms.ModelForm):
 		model = UserModel
 		# Add all the fields you want a user to change
 		fields = ['email','ideal_carbs','ideal_protein','ideal_fat','ideal_weight','ideal_calories','current_weight']
+
+class InviteTrainerForm(forms.ModelForm):
+	class Meta():
+		model = UserModel
+		fields = ['trainer_email']

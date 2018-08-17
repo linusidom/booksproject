@@ -8,3 +8,23 @@
 
 - Fix landing page - get rid of slippry - Done
 
+
+----
+
+
+- change out accounts folder
+- Update base user to AbstractUser
+- update forms to add UserUpdateForm
+- create custom signup method replacing username with email
+- create custom update method replacing username with email
+- update accounts/urls.py with signup and update methods from views
+
+--- Herorku
+- drop accounts, foods, expenses, exercises database
+--- python manage.py migrate --fake accounts zero
+--- rm accounts/migrations/0*
+--- python manage.py makemigrations
+--- python manage.py migrate --fake-initial
+
+cat ~/Desktop/books_book.csv | \
+> psql `heroku config:get DATABASE_URL --app modisidom` -c "COPY books_book FROM STDIN WITH (FORMAT CSV);"

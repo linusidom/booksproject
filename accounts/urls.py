@@ -9,6 +9,7 @@ urlpatterns=[
 	url(r'^$',views.IndexTemplateView.as_view(), name = 'index'),
 	# url(r'^signup/$',views.SignUpCreateView.as_view(), name = 'signup'),)
 	url(r'^signup/$',views.signup, name = 'signup'),
+	url(r'^invite_trainer/(?P<pk>\d+)$',views.invite_trainer, name = 'invite_trainer'),
 	
 	url(r'^user_login/$', auth_views.LoginView.as_view(template_name = 'accounts/login.html'), name='user_login'),
 	url(r'^user_logout/$', auth_views.LogoutView.as_view(), name='user_logout'),

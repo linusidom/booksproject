@@ -1,0 +1,10 @@
+{% extends 'accounts/base.html' %}
+{% block body_block %}
+
+<h1>Invite Trainer</h1>
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input class='update_button' type="submit" value="Update">
+</form>
+{% endblock %}

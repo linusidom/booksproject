@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.http import HttpResponse
 from django.views.generic import (TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
 from accounts.models import UserModel
-from accounts.forms import UserForm, UserUpdateForm
+from accounts.forms import UserForm, UserUpdateForm, InviteTrainerForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
@@ -83,7 +83,19 @@ def update(request, pk):
 		form = UserUpdateForm(instance=request.user)
 	return render(request, 'accounts/signup.html', {'form': form})
 
-
+@login_required
+def invite_trainer(request, pk):
+	if request.method == 'POST':
+		form = InviteTrainerForm(request.POST, instance=request.user)
+		if form.is_valid():
+			usermodel = form.save(commit=False)
+			usermodel.save()
+			return redirect('accounts:user_detail', pk=pk)
+		else:
+			return HttpResponse(forms.errors)
+	else:
+		form = InviteTrainerForm(instance = request.user)
+	return render(request, 'accounts/invite_trainer_form.html', {'form':form})
 
 
 

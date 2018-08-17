@@ -11,9 +11,12 @@
 <p>Fat Target: {{usermodel.ideal_fat}}</p>
 <p>Your Current Weight: {{usermodel.current_weight}}</p>
 
+<p>Trainer {{usermodel.trainer_email}}</p>
+
 
 <a class='btn btn-primary' href="{% url 'accounts:user_update' pk=usermodel.pk%}">Update</a>
 <a class='btn btn-danger' href="{% url 'accounts:user_delete' pk=usermodel.pk%}">Delete</a>
 <a class='btn btn-info' href="{% url 'accounts:user_change_password' %}">Change Password</a>
+<a class='btn btn-info' href="{% url 'accounts:invite_trainer' pk=user.pk %}">Invite Trainer</a>
 
 {% endblock %}
