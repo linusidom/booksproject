@@ -7,7 +7,7 @@
  
 
 /* ==== Google font ==== */
-@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');
+/*@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');*/
 /* === fontawesome === */
 @import url('font-awesome.css');
 /* === custom icon === */
@@ -98,7 +98,7 @@ h4 small {
 	opacity:1;
 }
 section {
-	padding:120px 0 40px 0;
+	padding: 0px 0 0px 0;
 }
 
 section.gray {
@@ -189,6 +189,18 @@ section.dark .heading h3 {
 section.dark .sub-heading p {	
 	color: #e9e9e9;
 }
+
+.update_button
+{
+	width: 100%;
+	border: 1px white solid;
+	background-color: #5C9F24;
+	height: 60px;
+	font-weight: bold;
+	margin: 20px 0 0px 0;
+	color: black;
+}
+
 
 /* =======================================
 1. Header
@@ -328,42 +340,20 @@ header .side-nav .home {
 /* =======================================
 2. Section: Intro
 ======================================== */
-section#intro{
-	position:relative;
-	width:100%;
-	height:auto;
-	margin:0;
-}
-
-section#intro{
-	padding:0 0 0 0;
-
-}
-
-section#intro.inner {
-	padding:140px 0 30px;
-}
-
-section#intro.inner h2 strong  {
-	color:#fff;
-}
-section#intro.inner h2  {
-	font-size:32px;
-}
-
-
-section#intro  {
+#intro{
+	background: url('mainwallpaper.jpg') no-repeat 0 -20px;
+	background-size: cover;
 	text-align:center;
+	height: 400px;
 }
 
-.sy-caption-wrap .sy-caption {
-  position: relative;
-  left: -50%;
-font-size: 48px;
-  color: #fff;
-  line-height: 1.1em;
-
+#intro h1 {
+	padding: 20px 0px 0px 0px;
+	margin: 0 auto;
+	color: white;
 }
+
+
 /* ==== general main content style ==== */
 #maincontent.section {
 	padding:30px 0 40px 0;
@@ -846,42 +836,31 @@ ul.the-icons {
 
 /*Login and Signup*/
 /*Login*/
-#login{
-	padding-top: 0px;
-	margin: 30px 0px;
-	text-align: center;
+
+form li{
+	list-style: none;
+	font-size: 12px;
+	padding: 0px 0px 0px 100px;
 }
 
-#login form,
-#signup form {
-	margin: 30px 0px;
-	color: black;
-}
-
-#login form input,
-#signup form input{
+form input,
+form label {
 	padding: 10px;
 	margin: 10px;
 	width: 250px;
 }
-#login .button,
-#signup .button,
-#question_update .question_udpate_button
- {
-	width: 100%;
-	border: 1px white solid;
-	background-color: #5C9F24;
-	height: 60px;
+
+.nopass .signup{
+	float:left;
+}
+.nopass .forgot{
+	float:right;
+	padding: 0px 30px 0px 0px;
 	font-weight: bold;
-	margin: 20px 0 0px 0;
-	color: black;
 }
 
-#signup {
-	padding-top: 0px;
-}
-#signup form label{
-	width: 150px;
+#pw_reset_done {
+	padding: 20px;
 }
 
 /*Intro Page*/
@@ -990,14 +969,15 @@ ul.the-icons {
 
 
 /*DATA Tables*/
-#DataTables_Table_0_wrapper{
+/*#DataTables_Table_0_wrapper*/
+.dataTables_wrapper{
 	/*margin: 30px 0px 30px 0px;*/
 	padding: 15px;
 	border: 3px solid #3b5998;
 	color: black;
 }
 /* ============== contact ==================== */
-#contact{
+.contact{
 	padding-top: 0px;
 }
 
@@ -1086,19 +1066,19 @@ textarea.form-control {
 div.cform-response-output {
 	max-width: 60%;
 	text-align: center;
-	margin-left: 40% !important;
+/*	margin-left: 40% !important;
 	margin-top: 0.5em !important;
-	padding: 0.5em !important;
+	padding: 0.5em !important;*/
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 }
 .cform-not-valid-tip {
 	color: #888;
-	border: 1px dotted #ad3729 !important;
+/*	border: 1px dotted #ad3729 !important;
 	width: 100% !important;
 	left: 0 !important;
-	padding: 0.5em !important;
+	padding: 0.5em !important;*/
 	font-family: 'Lato', sans-serif;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1112,25 +1092,24 @@ div.cform-response-output {
 	color: #fff;
 }
 
-#contact .moreinfo {
+.contact .moreinfo {
 	padding-left: 100px;
 }
 
-#contact .moreinfo img {
+.contact .moreinfo img {
 	width: 200px;
 }
-#contact .moreinfo a{
+.contact .moreinfo a{
 	padding: 20px;
 	display: block;
 }
 
 
 /*Foods, Expenses, Exercise*/
-.food_header,
-.expense_header,
-.exercise_header {
-	min-height: 80px;
-	border-bottom: 3px solid #3b5998;
+#food_list,
+#expense_list,
+#exercise_list{
+	padding: 0px;
 }
 
 .food_header h1,
@@ -1144,8 +1123,11 @@ div.cform-response-output {
 .expense_header a,
 .exercise_header a {
 	float: right;
-	padding: 30px 40px 0px 0px;
+	padding: 10px;
 	font-size: 16px;
+	background: #5C9F24;
+	color: white;
+	border-radius: 10%;
 }
 
 /*Reports*/
@@ -1226,20 +1208,7 @@ div.cform-response-output {
 	padding: 30px 0px 30px 100px;
 }
 
-#update_form {
-	text-align: center;
-	padding: 30px;
-}
 
-#update_form form label{
-	width: 200px;
-	padding: 0px 20px 0 0;
-}
-
-#update_form form input{
-	width: 300px;
-
-}
 
 /* Footer */
 
@@ -1361,7 +1330,7 @@ img.pull-left{
 	}
 	.sy-caption-wrap .sy-caption {
 		position: relative;
-		left:0;
+		/*left:0;*/
 		text-align: center;
 		font-size: 22px;
 		color: #fff;
@@ -1388,6 +1357,10 @@ img.pull-left{
 	}
 	.section {
 		padding:80px 0 40px 0;
+	}
+	.side-nav {
+		background-color: #111;
+		z-index: 1;
 	}
 	section#intro{
 		padding:0;
