@@ -36,9 +36,9 @@ class UserModelDetailView(LoginRequiredMixin, DetailView):
 		context['trainees'] = UserModel.objects.filter(trainer_email=self.request.user)
 		foods = dict()
 		for index,trainee in enumerate(context['trainees']):
-			print('index', index)
 			foods[index] = Food.objects.filter(user_id=trainee.pk)
 		context['foods'] = foods
+		context['range'] = str(len(context['trainees']) + 10)
 		return context
 
 	def get_queryset(self):

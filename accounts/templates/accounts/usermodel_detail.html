@@ -1,4 +1,5 @@
 {% extends 'accounts/base.html' %}
+{% load account_extras %}
 {% block body_block %}
 <h1>Profile HTML</h1>
 
@@ -11,15 +12,18 @@
 <p>Fat Target: {{usermodel.ideal_fat}}</p>
 <p>Your Current Weight: {{usermodel.current_weight}}</p>
 
-<p>Trainer {{usermodel.trainer_email}}</p>
+{% if usermodel.trainer_email %}
+	<p>Trainer {{usermodel.trainer_email}}</p>
+{% else %}
+	<p>You don't have any traners yet! Go ahead and <a href="{% url 'accounts:invite_trainer' pk=user.pk %}">Invite Trainer</a></p>
+{% endif %}
 
 
-{% for trainee in trainees %}
-	<p>{{key}}</p>
-	<p>Trainees <a href="{% url 'accounts:user_detail' pk=trainee.pk %}">{{trainee}} {{trainee.pk}}</a></p>
+{% for i in range %}
+	<h3>Trainees {{trainees|index:forloop.counter0}}</h3>
 
 <div class='food_table'>
-	{% if foods.key %}
+	{% if foods|index:forloop.counter0 %}
 		<table class='table'>
 			<thead>
 				<tr>
@@ -33,7 +37,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			{% for food in foods.key %}
+			{% for food in foods|index:forloop.counter0 %}
 				<tr>
 					<td>{{food.create_date}}</td>
 					<td>{{food.food_item}}</td>
@@ -49,10 +53,11 @@
 	{% endif %}
 	</div>
 {% endfor %}
-
+<br><br>
+<div>
 <a class='btn btn-primary' href="{% url 'accounts:user_update' pk=usermodel.pk%}">Update</a>
 <a class='btn btn-danger' href="{% url 'accounts:user_delete' pk=usermodel.pk%}">Delete</a>
 <a class='btn btn-info' href="{% url 'accounts:user_change_password' %}">Change Password</a>
-<a class='btn btn-info' href="{% url 'accounts:invite_trainer' pk=user.pk %}">Invite Trainer</a>
-
+<a class='btn btn-success' href="{% url 'accounts:invite_trainer' pk=user.pk %}">Invite Trainer</a>
+</div>
 {% endblock %}
