@@ -14,6 +14,42 @@
 <p>Trainer {{usermodel.trainer_email}}</p>
 
 
+{% for trainee in trainees %}
+	<p>{{key}}</p>
+	<p>Trainees <a href="{% url 'accounts:user_detail' pk=trainee.pk %}">{{trainee}} {{trainee.pk}}</a></p>
+
+<div class='food_table'>
+	{% if foods.key %}
+		<table class='table'>
+			<thead>
+				<tr>
+					<td>Log Date</td>
+					<td>Item</td>
+					<td>Calories</td>
+					<td>Servings</td>
+					<td>Carbs</td>
+					<td>Protein</td>
+					<td>Fat</td>
+				</tr>
+			</thead>
+			<tbody>
+			{% for food in foods.key %}
+				<tr>
+					<td>{{food.create_date}}</td>
+					<td>{{food.food_item}}</td>
+					<td>{{food.calories}}</td>
+					<td>{{food.servings}}</td>
+					<td>{{food.carbs}}</td>
+					<td>{{food.protein}}</td>
+					<td>{{food.fat}}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	</div>
+{% endfor %}
+
 <a class='btn btn-primary' href="{% url 'accounts:user_update' pk=usermodel.pk%}">Update</a>
 <a class='btn btn-danger' href="{% url 'accounts:user_delete' pk=usermodel.pk%}">Delete</a>
 <a class='btn btn-info' href="{% url 'accounts:user_change_password' %}">Change Password</a>

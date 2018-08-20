@@ -13,7 +13,7 @@ from django.db.models.signals import post_save
 
 # Create your models here.
 class Post(models.Model):
-	user = models.ForeignKey(UserModel, related_name = 'postuser', null=True, blank=True)
+	user = models.ForeignKey(UserModel, related_name = 'postuser', null=True, blank=True, on_delete=models.CASCADE)
 	question = models.CharField(max_length = 255)
 	chapter = models.IntegerField()
 	message = models.TextField(null=True, blank=True)

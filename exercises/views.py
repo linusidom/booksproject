@@ -2,7 +2,9 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.core.urlresolvers import reverse_lazy
+# from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
+
 # Create your views here.
 from django.views.generic import (TemplateView, ListView, DetailView,
 									CreateView, UpdateView,DeleteView)

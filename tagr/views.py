@@ -11,7 +11,9 @@ from django.views.generic import (TemplateView, ListView, DetailView,
 from tagr.models import Post, UserModel
 from tagr.forms import PostForm
 
-from django.core.urlresolvers import reverse_lazy
+# from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 

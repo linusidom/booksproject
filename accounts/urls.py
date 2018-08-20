@@ -1,7 +1,8 @@
 from django.conf.urls import url
 from accounts import views
 from django.contrib.auth import views as auth_views
-from django.core.urlresolvers import reverse_lazy
+# from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 
 app_name='accounts'
 

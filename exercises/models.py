@@ -17,7 +17,7 @@ class Exercise(models.Model):
 		('Weights','Weights'),
 		)
 
-	user = models.ForeignKey(User, related_name='exc_user')
+	user = models.ForeignKey(User, related_name='exc_user', on_delete=models.CASCADE)
 	minutes = models.IntegerField(default=30)
 	calories_burned = models.IntegerField(default=300)
 	exercise_type = models.CharField(max_length =15, choices=CATEGORY, default=CARDIO)

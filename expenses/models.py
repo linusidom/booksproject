@@ -21,7 +21,7 @@ class Expense(models.Model):
 		('Misc','Misc'),
 		)
 
-	user = models.ForeignKey(User, related_name='exp_user')
+	user = models.ForeignKey(User, related_name='exp_user', on_delete=models.CASCADE)
 	amount = models.IntegerField(default=10)
 	expense_item = models.CharField(max_length= 50)
 	expense_type = models.CharField(max_length =15, choices=CATEGORY, default=FOOD)
