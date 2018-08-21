@@ -27,7 +27,7 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # SECRET_KEY = 'b&^k0hve1)d62%9r=0pjuxu)%g1l(m#v2t7ni70sj*en7y6(fu'
-# DEBUG = True
+DEBUG = True
 # ALLOWED_HOSTS = []
 # DATABASES = {
 #     'default': {
@@ -39,7 +39,7 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 
 
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+# DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
@@ -83,9 +83,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'booksproject.urls'
 
@@ -154,7 +155,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
