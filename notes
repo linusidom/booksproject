@@ -26,5 +26,6 @@
 --- python manage.py makemigrations
 --- python manage.py migrate --fake-initial
 
-cat ~/Desktop/books_book.csv | \
-> psql `heroku config:get DATABASE_URL --app modisidom` -c "COPY books_book FROM STDIN WITH (FORMAT CSV);"
+cat ~/Desktop/books_book.csv | psql `heroku config:get DATABASE_URL --app modisidom` -c "COPY books_book FROM STDIN WITH (FORMAT CSV);"
+
+cat ~/Desktop/albums_album.csv | psql `heroku config:get DATABASE_URL --app modisidom` -c "COPY albums_album FROM STDIN WITH (FORMAT CSV);"
