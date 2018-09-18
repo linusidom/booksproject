@@ -3,4 +3,7 @@ register = template.Library()
 
 @register.filter
 def index(List, i):
-    return List[int(i)]
+	if List:
+		return List[int(i)]
+	else:
+		return None

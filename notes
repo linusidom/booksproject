@@ -29,3 +29,19 @@
 cat ~/Desktop/books_book.csv | psql `heroku config:get DATABASE_URL --app modisidom` -c "COPY books_book FROM STDIN WITH (FORMAT CSV);"
 
 cat ~/Desktop/albums_album.csv | psql `heroku config:get DATABASE_URL --app modisidom` -c "COPY albums_album FROM STDIN WITH (FORMAT CSV);"
+
+- 30-08-18
+- Complete Unit Testing
+-- Check each page in the accounts App
+-- Check each page in the Foods/Exercises/Expenses App
+-- Figure out how to do Client Tests and DB entries
+
+- Update name of Model to Profile
+-- Update urls to be profile_detail, user
+-- Update all the Apps, Tagr, foods, expe, exer to use Profile
+
+- Move Password Reset/Change Password to Main Templates/Registration
+-- Update booksproject/URL's
+---- Update the URLS to start with  "password...."
+- Update CSS Theme
+- Change name from booksproject to portfolio
