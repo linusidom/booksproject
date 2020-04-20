@@ -1,14 +1,12 @@
 {% extends 'tagr/base.html' %}
-{% block body_block %}
+{% block content %}
 <section id='question_update'>
-	<h3>Chapter {{post.chapter}}</h3>
-	<p>{{post.question}}</p>
-	<form method="POST">
+	<h1 class='sectionTitle'>Chapter {{post.chapter}}</h1>
+	<p class='lead'>{{post.question}}</p>
+	<form method="POST" class='tagrQuestion'>
 		{% csrf_token %}
-
 		{{form.as_p}}
-		<input class='udpate_button' type="submit" value="Save">
-		
+		<input class='btn btn-block btn-info' type="submit" value="Save">
 	</form>
 </section>
 

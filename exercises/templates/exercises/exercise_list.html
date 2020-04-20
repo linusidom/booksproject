@@ -1,21 +1,22 @@
 {% extends 'exercises/base.html' %}
-{% block body_block %}
+{% block content %}
 
 <section id='exercise_list'>
 	<div class='exercise_header'>
-		<h1>exercises LIST</h1>
-		<a class='create_button' href="{% url 'exercises:exercise_create' %}">Create an Exercise</a>
+		<h1 class='sectionTitle'>Exercises</h1>
+		<a class='btn btn-block btn-success' href="{% url 'exercises:exercise_create' %}">Create an Exercise</a>
 	</div>
-	<div class='clr'></div>
-	<div class='exercise_table'>
+	<div class='exercise_table mt-4'>
 	{% if exercise_list %}
-		<table class='table'>
+		<table class='table table-striped table-dark'>
 			<thead>
 				<tr>
 					<td>Log Date</td>
 					<td>Exercise Type</td>
 					<td>Calories</td>
 					<td>Minutes</td>
+					<td></td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -25,6 +26,8 @@
 					<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.exercise_type}}</a></td>
 					<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.calories_burned}}</a></td>
 					<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.minutes}}</a></td>
+					<td><a class='btn btn-info btn-sm' href="{% url 'exercises:exercise_update' pk=exercise.pk%}">Update</a></td>
+					<td><a class='btn btn-primary btn-sm' href="{% url 'exercises:exercise_delete' pk=exercise.pk%}">Delete</a></td>
 				</tr>
 			{% endfor %}
 			</tbody>

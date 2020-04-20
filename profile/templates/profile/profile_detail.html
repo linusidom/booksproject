@@ -1,0 +1,29 @@
+{% extends 'profile/base.html' %}
+{% block content %}
+<section id='profile_detail'>
+<h1 class='sectionTitle'>Profile Detail</h1>
+<td>{{profile.email}}</td>
+<table class="table table-striped">
+		<thead>
+			<th>Current Weight</th>
+			<th>Goal Weight</th>
+			<th>Desired Calories</th>
+			<th>Total Carbs</th>
+			<th>Total Protein</th>
+			<th>Total Fat</th>
+		</thead>
+		<tr>
+			<td>{{profile.current_weight}}</td>
+			<td>{{profile.ideal_weight}}</td>
+			<td>{{profile.ideal_calories}}</td>
+			<td>{{profile.ideal_carbs}}</td>
+			<td>{{profile.ideal_protein}}</td>
+			<td>{{profile.ideal_fat}}</td>
+		</tr>
+	</table>
+	<div class="grid-2">
+		<a class='btn btn-info' href="{% url 'profile:profile_update' pk=profile.pk %}">Update</a>
+		<a class='btn btn-primary' href="{% url 'profile:profile_delete' pk=profile.pk %}">Delete</a>
+	</div>
+</section>
+{% endblock %}

@@ -1,14 +1,27 @@
 {% extends 'expenses/base.html' %}
-{% block body_block %}
+{% block content %}
 
 <section id = 'expense_detail'>
-<h1>expenses DETAIL</h1>
+	<h1 class='sectionTitle'>Detailed Expense</h1>
 
-<h3>{{expense.expense_type}} {{expense.create_date}}</h3>
-<h3>Amount: {{expense.amount}} Item: {{expense.expense_item}}</h3>
-<h3>{{expense.user}}</h3>
 
-<a class='btn btn-info' href="{% url 'expenses:expense_update' pk=expense.pk %}">Update</a>
-<a class='btn btn-primary' href="{% url 'expenses:expense_delete' pk=expense.pk %}">Delete</a>
+	<table class="table table-striped">
+		<thead>
+			<th>Type</th>
+			<th>Item</th>
+			<th>Amount</th>
+			<th>Date</th>
+		</thead>
+		<tr>
+			<td>{{expense.expense_type}}</td>
+			<td>{{expense.expense_item}}</td>
+			<td>{{expense.amount}}</td>
+			<td>{{expense.create_date}}</td>
+		</tr>
+	</table>
+	<div class="grid-2">
+		<a class='btn btn-info w-50' href="{% url 'expenses:expense_update' pk=expense.pk %}">Update</a>
+		<a class='btn btn-primary w-50' href="{% url 'expenses:expense_delete' pk=expense.pk %}">Delete</a>
+	</div>
 </section>
 {% endblock %}

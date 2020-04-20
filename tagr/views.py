@@ -8,8 +8,8 @@ from django.views.generic import (TemplateView, ListView, DetailView,
 									CreateView, UpdateView, DeleteView)
 
 
-from tagr.models import Post, UserModel
-from tagr.forms import PostForm
+from tagr.models import Post
+from tagr.forms import PostUpdateForm
 
 # from django.core.urlresolvers import reverse_lazy
 from django.urls import reverse_lazy
@@ -41,7 +41,7 @@ class PostDetailView(LoginRequiredMixin, DetailView):
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
 	model = Post
-	fields = ['message']
+	form_class = PostUpdateForm
 
 	def get_queryset(self):
 		base_qs = super(PostUpdateView, self).get_queryset()

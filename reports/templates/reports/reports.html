@@ -1,27 +1,24 @@
 {% extends 'base.html' %}
-{% block body_block %}
-
-
-
+{% block content %}
 <section id='reports'>
-<h1>Reports</h1>
-	<div class='report_date'>
-		<form method="POST" action="{% url 'reports:report_list' %}">
-			{% csrf_token %}
-			<input type="date" name="startdate" required>
-			<input type="date" name="enddate" required>
-			<input class='btn_report_date' type="submit" value="Submit">
-		</form>
+	<h1 class='sectionTitle'>Reports</h1>
+		<div class='report_date p-4'>
+			<form method="POST" action="{% url 'reports:report_list' %}">
+				{% csrf_token %}
+				<input type="date" name="startdate" required>
+				<input type="date" name="enddate" required>
+				<input class='btn btn-primary btn-sm' type="submit" value="Submit">
+			</form>
 
-		{% if default %}
-			<p>Default is the last 7 Days</p>
-		{% endif %}
-	</div>
+			{% if default %}
+				<p>Default is the last 7 Days</p>
+			{% endif %}
+		</div>
 
-	{% if nodata%}
-		<p>Sorry but there is no information for the selected time range.  Please select another date range</p>
+		{% if nodata%}
+			<p>Sorry but there is no information for the selected time range.  Please select another date range</p>
 
-	{% else %}
+		{% else %}
 		<div class='report_summary'>
 
 			{% if calories_to_dollars %}
@@ -45,15 +42,14 @@
 		</div>
 
 		<div class='reports_foods'>
-			{% if foods %}
-			<section id='food_list'>
+			
+			<div id='food_list'>
 				<div class='food_header'>
-					<h1>Foods</h1>
-					<a class='create_button' href="{% url 'foods:food_create' %}">Create a Food</a>
+					<h1 class='sectionTitle'>Foods</h1>
+					<a class='btn btn-block btn-success' href="{% url 'foods:food_create' %}">Create a Food</a>
 				</div>
-				<div class='clr'></div>
+				{% if foods %}
 				<div class='food_table'>
-				
 					<table class='table'>
 						<thead>
 							<tr>
@@ -76,32 +72,33 @@
 								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.carbs}}</a></td>
 								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.protein}}</a></td>
 								<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.fat}}</a></td>
+								<td><a class='btn btn-info btn-sm' href="{% url 'foods:food_update' pk=food.pk%}">Update</a></td>
+								<td><a class='btn btn-info btn-sm' href="{% url 'foods:food_delete' pk=food.pk%}">Delete</a></td>
 							</tr>
 						{% endfor %}
 						</tbody>
 					</table>
-				{% endif %}
 				</div>
-			</section>
+			</div>
+			{% endif %}
 		</div>
-
 		<div class='reports_expenses'>
-			{% if expenses %}
-			<section id='expense_list'>
+			<div id='expense_list'>
 				<div class='expense_header'>
-					<h1>Expenses</h1>
-					<a class='create_button' href="{% url 'expenses:expense_create' %}">Create an Expense</a>
+					<h1 class='sectionTitle'>Expenses</h1>
+					<a class='btn btn-block btn-success' href="{% url 'expenses:expense_create' %}">Create an Expense</a>
 				</div>
-				<div class='clr'></div>
-				<div class='expense_table'>
-				
-					<table class='table'>
+				{% if expenses %}
+				<div class='expense_table mt-4'>
+					<table class='table table-dark table-striped'>
 						<thead>
 							<tr>
 								<td>Log Date</td>
 								<td>Item</td>
 								<td>Category</td>
 								<td>Amount</td>
+								<td></td>
+								<td></td>
 							</tr>
 						</thead>
 						<tbody>
@@ -111,31 +108,34 @@
 								<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_item}}</a></td>
 								<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_type}}</a></td>
 								<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.amount}}</a></td>
+								<td><a class='btn btn-info btn-sm' href="{% url 'expenses:expense_update' pk=expense.pk %}">Update</a></td>
+								<td><a class='btn btn-primary btn-sm' href="{% url 'expenses:expense_delete' pk=expense.pk %}">Delete</a></td>
 							</tr>
 						{% endfor %}
 						</tbody>
 					</table>
-				{% endif %}
 				</div>
-			</section>
+			</div>
+			{% endif %}
 		</div>
 
 		<div class='reports_exercises'>
-			{% if exercises %}
-			<section id='exercise_list'>
+			<div id='exercise_list'>
 				<div class='exercise_header'>
-					<h1>Exercises</h1>
-					<a class='create_button' href="{% url 'exercises:exercise_create' %}">Create an Exercise</a>
+					<h1 class='sectionTitle'>Exercises</h1>
+					<a class='btn btn-block btn-success' href="{% url 'exercises:exercise_create' %}">Create an Exercise</a>
 				</div>
-				<div class='clr'></div>
-				<div class='exercise_table'>
-					<table class='table'>
+				{% if exercises %}
+				<div class='exercise_table mt-4'>
+					<table class='table table-dark table-striped'>
 						<thead>
 							<tr>
 								<td>Log Date</td>
 								<td>Exercise Type</td>
 								<td>Calories</td>
 								<td>Minutes</td>
+								<td></td>
+								<td></td>
 							</tr>
 						</thead>
 						<tbody>
@@ -145,13 +145,15 @@
 								<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.exercise_type}}</a></td>
 								<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.calories_burned}}</a></td>
 								<td><a href="{% url 'exercises:exercise_detail' pk=exercise.pk%}">{{exercise.minutes}}</a></td>
+								<td><a class='btn btn-info btn-sm' href="{% url 'exercises:exercise_update' pk=exercise.pk%}">Update</a></td>
+								<td><a class='btn btn-primary btn-sm' href="{% url 'exercises:exercise_delete' pk=exercise.pk%}">Delete</a></td>
 							</tr>
 						{% endfor %}
 						</tbody>
 					</table>
-				{% endif %}
 				</div>
-			</section>	
+			</div>
+			{% endif %}	
 		</div>
 	{% endif %}
 </section>

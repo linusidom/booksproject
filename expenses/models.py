@@ -32,6 +32,6 @@ class Expense(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('expenses:expense_detail', kwargs={'pk':self.pk})
-
+		
 	class Meta():
 		ordering = ['-create_date']

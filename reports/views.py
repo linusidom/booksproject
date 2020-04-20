@@ -7,7 +7,6 @@ from django.views.generic import (TemplateView, ListView, DetailView, CreateView
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from accounts.models import UserModel
 from foods.models import Food
 from expenses.models import Expense
 from exercises.models import Exercise
@@ -16,6 +15,9 @@ from expenses.forms import ExpenseForm
 from exercises.forms import ExerciseForm
 from django.http import HttpResponse
 import datetime
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class IndexTemplateView(LoginRequiredMixin, ListView):
 	template_name='reports/reports.html'
@@ -23,7 +25,7 @@ class IndexTemplateView(LoginRequiredMixin, ListView):
 
 	def get_queryset(self):
 		user = self.request.user
-		queryset = UserModel.objects.filter(username=user)
+		queryset = User.objects.filter(username=user)
 		return queryset
 
 	def get_context_data(self, **kwargs):
@@ -180,7 +182,8 @@ def caloric_deficit(accounts, foods, exercises, days):
 
 @login_required
 def report_list(request):
-	accounts = UserModel.objects.filter(username=request.user)
+	accounts = User.objects.filter(username=request.user)
+	print('User Account', dir(accounts))
 	calories_to_dollars = offset = off_week = off_weeks = off_month = False
 	if request.method == 'POST':
 		date = 'Blah'
@@ -255,7 +258,7 @@ def report_list(request):
 @login_required
 def reports_list(request):
 
-	accounts = UserModel.objects.filter(username=request.user)
+	accounts = User.objects.filter(username=request.user)
 
 	if request.method == 'POST':
 		date = 'Blah'
@@ -339,7 +342,7 @@ def reports_list(request):
 
 @login_required
 def create_new_entry(request):
-	account = UserModel.objects.filter(username=request.user)
+	account = User.objects.filter(username=request.user)
 
 	if request.method == 'POST':
 		food_form = FoodForm(request.POST)

@@ -1,11 +1,11 @@
-from django.conf.urls import url
+from django.urls import path
 from albums import views
 
 
 app_name='albums'
 
 urlpatterns=[
-	url(r'^$',views.AlbumListView.as_view(), name = 'index'),
-	url(r'^albumapi/$',views.AlbumAPITemplateView.as_view(), name = 'albumapi'),
+	path('',views.AlbumListView.as_view(), name = 'index'),
+	path('albumapi/',views.AlbumAPITemplateView.as_view(), name = 'albumapi'),
 
 ]

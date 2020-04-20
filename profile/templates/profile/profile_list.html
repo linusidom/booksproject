@@ -1,0 +1,18 @@
+{% extends 'profile/base.html' %}
+{% block content %}
+
+<h1>Trainers and Trainees</h1>
+
+{% for profile in profile_list %}
+	<a href="{% url 'profile:profile_detail' pk=profile.pk %}">
+	<p>{{profile.pk}} {{profile.id}}</p>
+	<p>Weight {{profile.ideal_weight}}</p>
+	<p>carbs {{profile.ideal_carbs}}</p>
+	<p>calories {{profile.ideal_calories}}</p>
+	<p>fat {{profile.ideal_fat}}</p>
+	<p>protein {{profile.ideal_protein}}</p>
+	<p>Current Weight {{profile.current_weight}}</p></a>
+{% endfor %}
+<p>Trainer {{profile.trainer}}</p>
+<p>Trainee {{profile.trainee}}</p>
+{% endblock %}

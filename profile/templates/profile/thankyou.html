@@ -1,0 +1,11 @@
+{% extends 'profile/base.html' %}
+{% block content %}
+<h1>Login HTML</h1>
+
+	<p>You Email {{user.email}}</p>
+	<p>Password {{user.password}}</p>
+	<p>Username {{user.user}}</p>
+
+
+<a href="{% url 'account_login' %}">Login</a>
+{% endblock %}

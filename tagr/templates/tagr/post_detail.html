@@ -1,20 +1,35 @@
 {% extends 'tagr/base.html' %}
-{% block body_block %}
+{% block content %}
 <section id='question'>
-	<h3>Chapter {{post.chapter}}</h3>
-	<h4>{{post.question}}</h4>
-	<p>{{post.message}}</p>
-	<p>{{post.create_date}}</p>
-	<p><a class='btn btn-success' href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">Update</a></p>
-	<ul>
-	{% if post.previous %}
-		<li><a class='btn btn-info' href="{% url 'tagr:post_detail' pk=post.previous.pk chapter=post.chapter %}">Previous Question</a></li>{% endif %}
-	{% if post.next %}
-		<li><a class='btn btn-primary' href="{% url 'tagr:post_detail' pk=post.next.pk chapter=post.chapter%}">Next Question</a></li>{% endif %}
-	
-	</ul>
-	<div class='clr'></div>
-	<br>
-	<a class="btn btn-warning" href="{% url 'tagr:post_list' %}">Back to Questions</a>
-</section>
+	<h1 class='sectionTitle'>Chapter {{post.chapter}}</h1 >
+
+	<div class="card mb-3">
+		<div class="card-header">
+		{{post.question_number}}. {{post.question}}
+		</div>
+		<div class="card-body pb-2">
+			<p class="card-text text-left pb-5">{{post.message}}</p>
+			<p class="card-text">{{post.create_date}}</p>
+		</div>
+	</div>
+
+	<div class="grid-3 p-3">
+		{% if post.previous %}
+		<a class='btn btn-info' href="{% url 'tagr:post_detail' pk=post.previous.pk chapter=post.chapter %}">Previous Question</a>
+		{% else %}
+		<div><p class="btn btn-outline-secondary text-muted w-100">First Question</p></div>
+		{% endif %}
+		<a class='btn btn-success' href="{% url 'tagr:post_update' pk=post.pk chapter=post.chapter %}">Update</a>
+		
+		{% if post.next %}
+		<a class='btn btn-primary' href="{% url 'tagr:post_detail' pk=post.next.pk chapter=post.chapter%}">Next Question</a>
+		{% endif %}
+	</div>
+</section>		
+{% endblock %}
+
+{% block aftercontent %}
+	<div class='pt-4'>
+		<a class="btn btn-warning" href="{% url 'tagr:post_list' %}">Back to Questions</a>
+	</div>
 {% endblock %}

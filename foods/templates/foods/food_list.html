@@ -1,16 +1,16 @@
 {% extends 'foods/base.html' %}
-{% block body_block %}
+{% block content %}
 
 
 <section id='food_list'>
 	<div class='food_header'>
-		<h1>foods LIST</h1>
-		<a class='create_button' href="{% url 'foods:food_create' %}">Create a Food</a>
+		<h1 class='sectionTitle'>Foods</h1>
+		<a class='btn btn-block btn-success' href="{% url 'foods:food_create' %}">Create a Food</a>
 	</div>
 	<div class='clr'></div>
-	<div class='food_table'>
+	<div class='food_table mt-4'>
 	{% if food_list %}
-		<table class='table'>
+		<table class='table table-dark table-striped'>
 			<thead>
 				<tr>
 					<td>Log Date</td>
@@ -20,6 +20,8 @@
 					<td>Carbs</td>
 					<td>Protein</td>
 					<td>Fat</td>
+					<td></td>
+					<td></td>
 				</tr>
 			</thead>
 			<tbody>
@@ -32,6 +34,8 @@
 					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.carbs}}</a></td>
 					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.protein}}</a></td>
 					<td><a href="{% url 'foods:food_detail' pk=food.pk%}">{{food.fat}}</a></td>
+					<td><a class='btn btn-info btn-sm' href="{% url 'foods:food_update' pk=food.pk%}">Update</a></td>
+					<td><a class='btn btn-primary btn-sm' href="{% url 'foods:food_delete' pk=food.pk%}">Delete</a></td>
 				</tr>
 			{% endfor %}
 			</tbody>

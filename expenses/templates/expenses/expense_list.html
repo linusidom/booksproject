@@ -1,15 +1,15 @@
 {% extends 'expenses/base.html' %}
-{% block body_block %}
+{% block content %}
 
 <section id='expense_list'>
 	<div class='expense_header'>
-		<h1>expenses LIST</h1>
-		<a class='create_button' href="{% url 'expenses:expense_create' %}">Create an Expense</a>
+		<h1 class='sectionTitle'>Expenses</h1>
+		<a class='btn btn-block btn-success' href="{% url 'expenses:expense_create' %}">Create an Expense</a>
 	</div>
 	<div class='clr'></div>
-	<div class='expense_table'>
+	<div class='expense_table mt-4'>
 	{% if expense_list %}
-		<table class='table'>
+		<table class='table table-striped table-dark'>
 			<thead>
 				<tr>
 					<td>Log Date</td>
@@ -25,6 +25,8 @@
 					<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_item}}</a></td>
 					<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.expense_type}}</a></td>
 					<td><a href="{% url 'expenses:expense_detail' pk=expense.pk%}">{{expense.amount}}</a></td>
+					<td><a class='btn btn-info btn-sm' href="{% url 'expenses:expense_update' pk=expense.pk %}">Update</a></td>
+					<td><a class='btn btn-primary btn-sm' href="{% url 'expenses:expense_delete' pk=expense.pk %}">Delete</a></td>
 				</tr>
 			{% endfor %}
 			</tbody>

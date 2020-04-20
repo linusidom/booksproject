@@ -20,7 +20,6 @@ class IndexTemplateView(TemplateView):
 
 class ExerciseListView(LoginRequiredMixin, ListView):
 	model = Exercise
-	login_url = 'accounts:user_login'
 
 	def get_queryset(self):
 		user = self.request.user
@@ -29,7 +28,6 @@ class ExerciseListView(LoginRequiredMixin, ListView):
 
 class ExerciseDetailView(LoginRequiredMixin, DetailView):
 	model = Exercise
-	login_url = 'accounts:user_login'
 
 	def get_querysef(self):
 		user = self.request.user
@@ -40,7 +38,6 @@ class ExerciseDetailView(LoginRequiredMixin, DetailView):
 class ExerciseCreateView(LoginRequiredMixin,CreateView):
 	model = Exercise
 	form_class = ExerciseForm
-	login_url = 'accounts:user_login'
 	success_url = reverse_lazy('exercises:exercise_list')
 
 	def form_valid(self, form):
@@ -50,10 +47,8 @@ class ExerciseCreateView(LoginRequiredMixin,CreateView):
 class ExerciseUpdateView(LoginRequiredMixin, UpdateView):
 	model = Exercise
 	form_class = ExerciseForm
-	login_url = 'accounts:user_login'
 	success_url = reverse_lazy('exercises:exercise_list')
 
 class ExerciseDeleteView(LoginRequiredMixin, DeleteView):
 	model = Exercise
 	success_url = reverse_lazy('exercises:exercise_list')
-	login_url = 'accounts:user_login'		

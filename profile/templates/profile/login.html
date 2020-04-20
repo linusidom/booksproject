@@ -1,0 +1,17 @@
+{% extends 'profile/base.html' %}
+{% block content %}
+<section id='login' class='container w-auto pb-3'>
+<h1 class='font-weight-bold pb-2 pt-5'>Login</h1>
+<form method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input class='btn btn-block btn-info' type="submit" value="Login">
+	<p class='signup'>Don't have an Account...Go ahead and <a href="{% url 'accounts:signup' %}">SignUp</a></p>
+	<h3 class='forgot'><a href="{% url 'password_reset' %}">Forgot?</a></h3>
+</form>
+<div class='nopass'>
+	
+</div>
+<div class='clr'></div>
+</section>
+{% endblock %}

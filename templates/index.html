@@ -1,99 +1,80 @@
 {% extends 'base.html' %}
-{% load staticfiles %}
-{% block body_block %}
+{% load static %}
+{% block index %}
 
-<section id="about" class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="heading">
-					<h3><span>Welcome To<br>ModiSidoM</span></h3>
-				</div>
-				<div class="sub-heading">
-					<p>
-						 Creating Useful Applications that Expand Your Horizons
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3">
-				<div class="team-box">
-					<img src="{% static 'css/portfolio/1.jpg' %}" alt="" class="img-responsive" />
-					<div class="roles">
-						<a href="{% url 'books:index' %}"><h5><strong>Books to Read</strong></h5>
-						<p>
-							A compiled list of the Greatest Books to ever read in your Lifetime...
-						</p></a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="team-box">
-					<img src="{% static 'css/portfolio/2.jpg' %}" alt="" class="img-responsive" />
-					<div class="roles">
-						<a href="{% url 'albums:index' %}"><h5><strong>Albums to Enjoy</strong></h5>
-						<p>
-							Aggregated List and Rankings of the Greatest Albums ever created to date!
-						</p></a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="team-box">
-					<img src="{% static 'css/portfolio/3.jpg' %}" alt="" class="img-responsive" />
-					<div class="roles">
-						<a href="{% url 'tagr:post_list' %}"><h5><strong>Think And Grow Rich</strong></h5>
-						<p>
-							Read the Book, Track your thoughts, Aim for a Higher Purpose
-						</p></a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="team-box">
-					<img src="{% static 'css/portfolio/4.jpg' %}" alt="" class="img-responsive" />
-					<div class="roles">
-						<a href="{% url 'reports:report_list' %}"><h5><strong>Fitness Tracking</strong></h5>
-						<p>
-							Track the Quality of What You Eat, How Close to Your Nutritional Goals You Are and the Quality of the Calories you Consume
-						</p></a>
-					</div>
-				</div>
-			</div>
+<div id="showcase">
+	<h1 class='showcaseTitle display-4 pt-5 font-weight-bold'>ModiSidom</h1>
+	<p class='lead'>Apps to Simplify Life</p>
+</div>
+<div id='index' class='grid-4'>	
+	<!-- Books -->
+	<a href="{% url 'books:index' %}">
+	<div class="boxBooks appSummary">
+		<div>
+			<h1 class='sectionTitle'>Books</h1>
 		</div>
 	</div>
-</section>
-
-<section id="works" class="section gray">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="heading">
-					<h3><span>What We're Working On</span></h3>
-				</div>
-				<div class="sub-heading">
-					<p>
-					 With a variety of Hobbies and Technology at our Beck and Call, we not only have the ability to simply create but we can now adapt to ever changing landscape of increasing interests and challenges.
-						</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="grid effect" id="grid">
-				<li>
-					<a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="{% url 'books:index' %}">Books
-						<img src="{% static 'css/portfolio/1.jpg' %}" alt="" />
-					</a>						
-				</li>
-				<li><a href="{% url 'albums:index' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">Albums<img src="{% static 'css/portfolio/2.jpg' %}" alt="" /></a></li>
-				<li><a href="{% url 'tagr:post_list' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">TAGR<img src="{% static 'css/portfolio/3.jpg' %}" alt="" /></a></li>
-				<li><a href="{% url 'reports:report_list' %}" class="fancybox" data-fancybox-group="gallery" title="Portfolio name">Fitness<img src="{% static 'css/portfolio/4.jpg' %}" alt="" /></a></li>
-				</ul>
-			</div>
+	</a>
+    <!-- Albums -->
+    <a href="{% url 'albums:index' %}">
+	<div class="boxAlbums appSummary">
+		<div>
+			<h1 class='sectionTitle'>Albums</h1>
 		</div>
 	</div>
-</section>
+	</a>
+	<!-- Think and Grow Rich -->
+	<a href="{% url 'tagr:index' %}">
+	<div class="boxTagr appSummary">
+		<div>
+			<h1 class='sectionTitle'>Think and Grow Rich</h1>
+		</div>
+	</div>
+	</a>
+    <!-- Expenses -->
+    <a href="{% url 'reports:index' %}">
+    <div class="boxTracker appSummary">
+    	<div>
+    		<h1 class='sectionTitle'>Expense Tracker</h1>
+    	</div>
+    </div>
+	</a>
+</div>
+<div id="mainBooks" class='grid-2'>
+	<div class='booksText'>
+		<h1 class='booksTextTitle font-weight-bold'>Books to Read in a LifeTime</h1>
+		<p class='booksTextPara'>From the 10 popular 100 books to read in a lifetime lists, this is the Definitive Guide.<br>Ranking the most frequent appearances of books on all 10 lists this list gives you the hands down most popular books aggregated</p>
+	</div>
+	<div class='booksImage'>
+		<img src="{% static 'img/booksImage.jpg' %}" alt="">
+	</div>
+</div>
+<div id="mainAlbums" class='grid-2'>
+	<div>
+		<p class='mainAlbumsTextPara'>Trying figure out what you should listen to next?  How about picking from the list of the greatest albums ever created!  From the Beatles to the Rollings Stones and from Adele to ZZ Top, this list has you covered on the most popular albums to ever be created.</p>
+	</div>
+	<div class='mainAlbumsTextTitle'>
+		<h1>Albums to Listen to In a lifetime</h1>
+	</div>
+</div>
+<div id="mainTagr" class='grid-2'>
+	<div class='tagrText'>
+		<h1 class='tagrTextTitle'>Think and Grow Rich - The Master Class</h1>
+		<p class='tagrTextPara'>Read the book, and write down your thoughts.</p>
+	</div>
+	<div class="tagrImage">
+		<img src="{% static 'img/tagrImage2.jpg'%}" alt="">
+	</div>
+</div>
+<div id="mainTracker" class='grid-2'>
+	<div>
+		<p class='mainTrackerTextPara'>
+			We spend money on food and we track our calories to track the quality of our intake?  Shouldn't we be tracking the quality of our output?<br><br>Track how much money you spend on the quality of calories you eat.
+		</p>
+	</div>
+	<div class='mainTrackerTextTitle'>
+		<h1 class='font-weight-bold'>Expenses to Calories Tracker</h1>
+	</div>
+</div>
 
 {% endblock %}

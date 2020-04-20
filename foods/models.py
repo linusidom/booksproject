@@ -19,7 +19,7 @@ class Food(models.Model):
 	carbs = models.IntegerField(default=200)
 
 	def __str__(self):
-		return self.user
+		return self.food_item
 
 	def get_absolute_url(self):
 		return reverse('foods:food_detail', kwargs={'pk':self.pk})

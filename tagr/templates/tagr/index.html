@@ -1,22 +1,35 @@
 {% extends 'tagr/base.html' %}
-{% block body_block %}
-<section id='tagr'>
-	<h1>Welcome to the Think and Grow Rich Challenge</h1>
+{% block content %}
+<section id='tagr' class='container w-auto pb-3'>
+	<h1 class='font-weight-bold pb-2 pt-5'>Welcome to the Think and Grow Rich Challenge</h1>
 
-	<p>Napoeloen Hill set out on a quest to understand the minds of the most Successful people in America.</p>
-	<p>Through his journey he discovered some very similar traits in all these people</p>
-	<p>I propose a challenge to you</p>
-	<p>Read the book, answer the questions</p>
-	<p>All answers are private to yourself</p>
-	<p>All the progress and benefits gained through this exercise are also private and belong to you and you alone</p>
-	
-	<div class='tagr_schedule'>
-		<h4>The Schedule</h4>
-		<h5>15 Weeks...Starting Now</h5>
-		<p>Read 1 Chapter, only 1 Chapter per week and document your thoughts...that's it</p>
+	<p class='p-2'>Napoeloen Hill set out on a quest to understand the minds of the most Successful people in America.</p>
+	<p class='p-2'>Through his journey he discovered some very similar traits in all these people</p>
+	<p class='p-2 font-weight-bold'>I propose a challenge to you</p>
+	<ul class='list-inline'>
+		<li class='h5 list-inline-item pl-3 pr-3'>Read the book</li>
+		<li class='h5 list-inline-item pl-3 pr-3'>Answer the questions</li>
+	</ul>
+	<div class='grid-3'>
+		<p class='text-muted text-left'>All answers are private and belong to you</p>
+		<p class='text-muted text-center'>All the progress is private and belongs to you</p>
+		<p class='text-muted text-right'>All the benefits gained are  private and belong to you</p>
 	</div>
+	<hr>
+	<div class='tagr_schedule'>
+		<h4 class='text-left'>The Schedule</h4>
+		<h5 class='text-left'>15 Weeks...Starting Now</h5>
+		<p class='text-left'>Read 1 Chapter, only 1 Chapter per week and document your thoughts...that's it</p>
+	</div>
+	<hr>
 	
-	<h3><a href="{% url 'accounts:signup' %}">Sign up and Start the Challenge</a></h3>
+	<div class="grid-5">
+		<a class='btn btn-info w-100' href="{% url 'account_signup' %}">Sign Up</a>
+		<i class="fas fa-angle-double-left text-info fa-2x"></i>
+		<p>Do you have an Account?</p>
+		<i class="fas fa-angle-double-right text-dark fa-2x"></i> 
+		<a class='btn btn-dark w-100' href="{% url 'account_login' %}?next={% url 'tagr:post_list' %}">Login</a>
+	</div>
 	
 </section>
 

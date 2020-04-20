@@ -1,9 +1,9 @@
 {% extends 'foods/base.html' %}
-{% block body_block %}
-<h1>food DELETE</h1>
-<form method="POST">
+{% block content %}
+<h1 class='sectionTitle'>Confirm Delete</h1>
+<form class='foodForm' method="POST">
 	{% csrf_token%}
-	{{object}}?
-	<input class='btn btn-danger' type="submit" value="Delete">
+	<p class='lead'>Would you like to remove {{object}}?</p>
+	<input class='btn btn-danger mt-4' type="submit" value="Delete">
 </form>
 {% endblock %}
