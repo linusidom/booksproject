@@ -38,7 +38,7 @@ class ExerciseDetailView(LoginRequiredMixin, DetailView):
 class ExerciseCreateView(LoginRequiredMixin,CreateView):
 	model = Exercise
 	form_class = ExerciseForm
-	success_url = reverse_lazy('exercises:exercise_list')
+	success_url = reverse_lazy('reports:index')
 
 	def form_valid(self, form):
 		form.instance.user = self.request.user
@@ -47,8 +47,8 @@ class ExerciseCreateView(LoginRequiredMixin,CreateView):
 class ExerciseUpdateView(LoginRequiredMixin, UpdateView):
 	model = Exercise
 	form_class = ExerciseForm
-	success_url = reverse_lazy('exercises:exercise_list')
+	success_url = reverse_lazy('reports:index')
 
 class ExerciseDeleteView(LoginRequiredMixin, DeleteView):
 	model = Exercise
-	success_url = reverse_lazy('exercises:exercise_list')
+	success_url = reverse_lazy('reports:index')

@@ -43,7 +43,7 @@ class ExpenseDetailView(LoginRequiredMixin, DetailView):
 class ExpenseCreateView(LoginRequiredMixin, CreateView):
 	model = Expense
 	form_class = ExpenseForm
-	success_url = reverse_lazy('expenses:index')
+	success_url = reverse_lazy('reports:index')
 
 	def form_valid(self, form):
 		form.instance.user = self.request.user
@@ -52,9 +52,9 @@ class ExpenseCreateView(LoginRequiredMixin, CreateView):
 class ExpenseUpdateView(LoginRequiredMixin, UpdateView):
 	model = Expense
 	form_class = ExpenseForm
-	success_url = reverse_lazy('expenses:index')
+	success_url = reverse_lazy('reports:index')
 	
 
 class ExpenseDeleteView(LoginRequiredMixin, DeleteView):
 	model = Expense
-	success_url = reverse_lazy('expenses:index')
+	success_url = reverse_lazy('reports:index')

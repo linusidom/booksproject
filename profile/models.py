@@ -9,7 +9,7 @@ from django.db.models.signals import post_save
 User = get_user_model()
 
 class Profile(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	user = models.OneToOneField(User, related_name='user_profile', on_delete=models.SET_DEFAULT, primary_key=True, default=1)
 	ideal_fat = models.IntegerField(default=20)
 	ideal_protein = models.IntegerField(default=40)
 	ideal_carbs = models.IntegerField(default=40)

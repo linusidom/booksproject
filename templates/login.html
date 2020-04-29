@@ -8,7 +8,7 @@
 	<input type="hidden" name="next" value="{{ request.GET.next }}" />
 	{{form.as_p}}
 	<input class='btn btn-block btn-info' type="submit" value="Login">
-	<p><a class='text-info' href="{% url 'password_reset' %}">Forgot?</a> Or Don't have an Account...Go ahead and <a href="{% url 'accounts:signup' %}">SignUp</a></p>
+	<p><a class='text-info' href="{% url 'password_reset' %}">Forgot?</a> Or Don't have an Account...Go ahead and <a href="{% url 'account_signup' %}">SignUp</a></p>
 	<p class='forgot'></p>
 </form>
 <div class='nopass'>

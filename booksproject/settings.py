@@ -164,7 +164,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR,]
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
-LOGIN_URL = 'accounts:user_login'
+LOGIN_URL = 'account_login'
 
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

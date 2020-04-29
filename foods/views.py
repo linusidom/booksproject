@@ -37,7 +37,7 @@ class FoodCreateView(LoginRequiredMixin, CreateView):
 	model = Food
 	# fields = ['item','servings','calories','create_date']
 	form_class = FoodForm
-	success_url = reverse_lazy('foods:food_list')
+	success_url = reverse_lazy('reports:index')
 
 	# Filter by User
 	def form_valid(self, form):
@@ -47,11 +47,11 @@ class FoodCreateView(LoginRequiredMixin, CreateView):
 class FoodUpdateView(LoginRequiredMixin, UpdateView):
 	model = Food
 	form_class = FoodForm
-	success_url = reverse_lazy('foods:food_list')
+	success_url = reverse_lazy('reports:index')
 
 class FoodDeleteView(LoginRequiredMixin, DeleteView):
 	model = Food
-	success_url = reverse_lazy('foods:food_list')
+	success_url = reverse_lazy('reports:index')
 
 
 

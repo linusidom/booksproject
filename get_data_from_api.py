@@ -24,7 +24,21 @@ for line in lines:
 		occurrences=line['fields']['occurrences'], 
 		amazonlink=line['fields']['amazonlink']
 		)
+with open('./albums.json') as f:
+	lines = f.readlines()
+	lines = json.loads(lines[0])
 
+# try:
+for line in lines:
+	# print('Line', line)
+	Album.objects.get_or_create(
+		title=line['fields']['title'],
+		artist=line['fields']['artist'],
+		year=line['fields']['year'],
+		wikilink=line['fields']['wikilink'], 
+		occurrences=line['fields']['occurrences'], 
+		amazonlink=line['fields']['amazonlink']
+		)
 		# print('Printing',
 		# 	line['fields']['title'],
 		# 	line['fields']['artist'],
