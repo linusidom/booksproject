@@ -24,7 +24,7 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 SECRET_KEY = 'b&^k0hve1)d62%9r=0pjuxu)%g1l(m#v2t7ni70sj*en7y6(fu'
-DEBUG = True
+DEBUG = False
 # ALLOWED_HOSTS = []
 
 
@@ -167,10 +167,10 @@ LOGOUT_REDIRECT_URL = 'index'
 LOGIN_URL = 'account_login'
 
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# EMAIL_USE_TLS = True
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'siliconvalleyenglishthailand@gmail.com'
-# EMAIL_HOST_PASSWORD = 'frulcrkmspsimxkx'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'siliconvalleyenglishthailand@gmail.com'
+EMAIL_HOST_PASSWORD = 'bajehraugyrjxrdf'
