@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.urls import path, re_path, include, reverse_lazy
 from django.contrib import admin
-from booksproject import views
+from booksproject import views, settings
 from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+
 # from accounts.forms import CustomAuthForm
 
 urlpatterns = [
@@ -58,4 +60,6 @@ urlpatterns = [
 
 ]
 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

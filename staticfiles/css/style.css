@@ -1,0 +1,275 @@
+:root{
+
+	--navbar: #495867;
+	--primary_first: #ebb401;
+	--primary_second: #297373;
+	--secondary_first: #FF8552;
+	--secondary_second: #E6E6E6;
+}
+
+body{
+	background: var(--navbar);
+	text-align: center;
+	font-family: 'PT Sans', sans-serif;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+	line-height: 1.5rem;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+footer p{
+	padding: 1.5rem;
+
+}
+
+/* Utility Classes */
+.container{
+	background: var(--secondary_second);
+}
+
+.grid-2{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+}
+
+.grid-3{
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: 1fr 1fr 1fr;
+	/*justify-items: center;*/
+	margin: 0 auto;
+}
+
+.grid-4{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-5 {
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: repeat(5, 1fr);
+	padding-bottom: 2rem;
+	margin: 0 auto;
+	justify-items: center;
+}
+
+/* INDEX */
+#showcase{
+	min-height: 20rem;
+	background: url('../img/mainIndex.jpg') no-repeat center/cover;
+}
+
+.appSummary h1{
+	padding: 6rem 2rem 0 2rem;
+	min-height: 15rem;
+	margin: 0 auto;
+	font-size: 2rem;
+	font-weight: bold;
+
+}
+
+.boxBooks{
+	background: var(--primary_first);
+	
+}
+
+.boxAlbums{
+	background: var(--primary_second);
+	
+}
+
+.boxTagr{
+	background: var(--secondary_second);
+	
+}
+
+.boxTracker{
+	background: var(--secondary_first);
+	
+}
+
+#mainBooks, #mainTagr{
+	min-height: 12rem;
+	margin: 0 auto;
+}
+
+.booksText{
+	color: var(--primary_second);
+	background: var(--secondary_second);
+}
+
+.tagrText{
+	color: var(--secondary_first);
+	background: var(--secondary_second);
+}
+
+.booksTextTitle, .tagrTextTitle{
+	padding: 4rem 0 1rem 0;
+	margin: 0 auto;
+	width: 60%;
+	font-weight: bold;
+}
+
+.booksTextPara, .tagrTextPara{
+	margin: 0 auto;
+	padding: 0 2rem 3rem 2rem;
+	width: 70%;
+	text-align: left;
+}
+
+.booksImage{
+	background: var(--primary_second);
+}
+
+ .tagrImage{
+ 	background: var(--secondary_first);	
+ }
+
+#mainBooks img, #mainTagr img{
+	height: 100%;
+	width: 100%;
+	padding: 2rem;
+	border-radius: 50%;
+}
+
+
+#mainAlbums{
+	background: url('../img/albumImage.jpg') no-repeat center/cover;
+}
+
+.mainAlbumsTextPara{
+	padding: 2rem;
+	/*font-size: 1.3rem;*/
+	line-height: 2.5rem;
+	color: var(--primary_first);
+	/*width: 90%;*/
+}
+
+.mainAlbumsTextTitle h1{
+	padding: 5rem 2rem 0 2rem;
+	color: var(--secondary_first);
+	font-weight: bold;
+	/*font-size: 8rem;*/
+	margin: 0 auto;
+}
+
+#mainTracker{
+	background: url('../img/trackerImage.jpg') no-repeat center/cover;
+}
+
+.mainTrackerTextPara{
+	padding: 2rem;
+	/*font-size: 1.3rem;*/
+	line-height: 2.5rem;
+	color: var(--secondary_second);
+	/*width: 90%;*/
+}
+
+.mainTrackerTextTitle h1{
+	padding: 7rem 2rem 0 2rem;
+	color: var(--primary_second);
+	margin: 0 auto;
+}
+
+
+/*Books and Albums */
+/*#DataTables_Table_0_wrapper {
+
+
+}*/
+
+.sectionTitle{
+	padding-top: 2.5rem;
+	padding-bottom: 1rem;
+	font-weight: bold;
+}
+
+.nerdInfo p{
+	text-align: left;
+	line-height: 2.5rem;
+	color: var(--secondary_second);
+	padding: 0 20px;
+}
+
+.bookTitle, .albumTitle{
+	padding: 4rem 6rem 0 6rem;
+	/*font-weight: bold;*/
+	font-size: 2rem;
+}
+
+.question{
+	padding: 1.3rem 0;
+	font-weight: bold;
+}
+
+#SourceList ul{
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	list-style: none;
+	text-align: center;
+}
+
+/*Signup Form*/
+#signup_form, #login, #expenseForm,
+.foodForm, .exerciseForm, .profileUpdateForm {
+	text-align: left;
+	padding: 0 50px;
+	margin: 0 auto;
+}
+
+#signup_form input, #login input,
+#expenseForm input, #expenseForm select,
+.foodForm input, .profileUpdateForm input,
+.exerciseForm input, .exerciseForm select{
+	width: 100%;
+/*	border-radius: 5%;
+*/	padding: 5px;
+	margin: 10px;
+}
+
+.tagrQuestion textarea{
+	width: 100%;
+	margin: 2rem 0;
+	padding: 1rem 2rem;
+}
+
+.update_button{
+	background: var(--primary_first);
+}
+
+#signup_form ul, .signUpForm .helptext  {
+	font-size: 10px;
+	list-style: none;
+}
+
+/* Reports */
+.report_summary p{
+	line-height: 1.8rem;
+	padding: 1rem 8rem;
+}
+
+
+
+@media (max-width: 600px){
+	.hideOnSmall{
+		display:none;
+	}
+	.grid-2{
+		display: block;
+	}
+}

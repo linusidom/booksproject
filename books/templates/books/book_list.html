@@ -6,6 +6,7 @@
 
 <section id='book_showcase'>
 	<h1 class='sectionTitle'>The Definitive List of Novels to Read in a Lifetime!</h1>
+	<h1>Random STatemetn</h1>
 	<div class='grid-2 hideOnSmall'>
 		<div class='bookContent'>
 			<p class='bookText pl-2 pr-5 pb-2 text-left'>The following list is comprised of an aggregation of the 10 websites (listed below) resulting in this Master List of commonalites which indicate the most popular books of all time.  In short, the more appearances the more popular.  Each Books contains links to Amazon and Wikipedia if you want more information about the book</p>
@@ -30,7 +31,6 @@
 		<thead>
 			<tr>
 				<td>Rank</td>
-				<td>Number of Lists</td>
 				<td>Title <span class='tablespan'>(Amazon)</span></td>
 				<td>Author <span class='tablespan'>(Wiki)</span></td>
 				<td class='hideOnSmall'>Publication Date</td>
@@ -40,7 +40,6 @@
 		{% for book in book_list %}
 			<tr>
 				<td>{{book.id}}</td>
-				<td>{{book.occurrences}}</td>
 				<td><a href="{{book.amazonlink}}/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&linkCode=as2&tag=modisoperan08-20" target="_blank">{{book.title}}</a></td>
 				<td><a href="{{book.wikilink}}" target="_blank">{{book.author}}</a></td>
 				<td class='hideOnSmall'>{{book.pubdate}}</td>
