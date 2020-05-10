@@ -23,19 +23,21 @@
 	<table class='table dataTable table-dark table-striped w-auto'>
 		<thead>
 			<tr>
+				<td>Rank</td>
 				<td>Number of Lists</td>
 				<td>Album Title <span class='tablespan'>(Amazon)</span></td>
 				<td>Artist <span class='tablespan'>(Wiki)</span></td>
-				<td>Publication Date</td>
+				<td class='hideOnSmall'>Publication Date</td>
 			</tr>
 		</thead>
 		<tbody>
 		{% for album in album_list %}
 			<tr>
+				<td>{{album.id}}</td>
 				<td>{{album.occurrences}}</td>
 				<td><a href="{{album.amazonlink}}/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&linkCode=as2&tag=modisoperan08-20" target="_blank">{{album.title}}</a></td>
 				<td><a href="{{album.wikilink}}" target="_blank">{{album.artist}}</a></td>
-				<td>{{album.year}}</td>
+				<td class='hideOnSmall'>{{album.year}}</td>
 			</tr>
 		{% endfor %}
 		</tbody>
