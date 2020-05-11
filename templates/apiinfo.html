@@ -1,16 +1,79 @@
-{% extends 'books/base.html' %}
-{% block body_block %}
+{% extends 'base.html' %}
+{% block content %}
 
-<section id='main' class='apiinfo'>
-	<h3>Welcome to the API Section</h3>
-	<p>Fairly simple, read-only access</p>
-
-	<p><strong>Read the full list of Books</strong></p>
-	<p><a href="{% url 'api_books:api_book_list' %}" target="_blank">Full List of Books via HTML</a></p>
-	<p><a href="{% url 'api_books:api_book_list' %}?format=json " target="_blank">Full List of Books via JSON</a> </p>
-
-	<p><strong>Read the full list of Albums</strong></p>
-	<p><a href="{% url 'api_albums:api_album_list' %}" target="_blank">Full List of Albums via HTML</a></p>
-	<p><a href="{% url 'api_albums:api_album_list' %}?format=json " target="_blank">Full List of Albums via JSON</a> </p>
+<section>
+	<h1 class='sectionTitle'>Welcome to the API Section</h1>
+	<div class='grid-2'>
+		<div>
+			<p><strong>Read the full list of Books</strong></p>
+			<p class='m-3'><a href="{% url 'api_books:api_book_list' %}" target="_blank">Full List of Books via HTML</a></p>
+			<p class='m-3'><a href="{% url 'api_books:api_book_list' %}?format=json " target="_blank">Full List of Books via JSON</a> </p>
+		</div>
+	
+		<div>
+			<p><strong>Read the full list of Albums</strong></p>
+			<p class='m-3'><a href="{% url 'api_albums:api_album_list' %}" target="_blank">Full List of Albums via HTML</a></p>
+			<p class='m-3'><a href="{% url 'api_albums:api_album_list' %}?format=json " target="_blank">Full List of Albums via JSON</a> </p>
+		</div>
+	</div>
 </section>
+<section class='mt-4 text-left'>
+	<div>
+		<h5>Books API Usage</h5>
+		<table class="table table-striped">
+			<thead>
+				<th>Usage</th>
+				<th>Command</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>/GET Browser UI</td>
+					<td>api_books/</td>
+				</tr>
+				<tr>
+					<td>/GET Browser JSON</td>
+					<td>api_books/?format=json</td>
+				</tr>
+				<tr>
+					<td>/GET Detail Browser UI</td>
+					<td>api_books/detail/1</td>
+				</tr>
+				<tr>
+					<td>/GET Detail Browser JSON</td>
+					<td>api_books/detail/1?format=json</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<h5>Albums API Usage</h5>
+		<table class="table table-striped">
+			<thead>
+				<th>Usage</th>
+				<th>Command</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>/GET Browser UI</td>
+					<td>api_albums/</td>
+				</tr>
+				<tr>
+					<td>/GET Browser JSON</td>
+					<td>api_albums/?format=json</td>
+				</tr>
+				<tr>
+					<td>/GET Detail Browser UI</td>
+					<td>api_albums/detail/1</td>
+				</tr>
+				<tr>
+					<td>/GET Detail Browser JSON</td>
+					<td>api_albums/detail/1?format=json</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+
+
 {% endblock %}

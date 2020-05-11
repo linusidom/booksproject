@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Unfortunately the page you are looking for cannot be found</h1>
-<h3>Feel free to send us a note and we can find out what went wrong</h3>
-<form action="{% url 'contactform' %}">
-	{% csrf_token %}
-	{{form.as_p}}
-	<input type="submit" value='Contact Us'>
-</form>
+<h1 class='sectionTitle'>Unfortunately the page you are looking for cannot be found</h1>
+
 {% endblock %}

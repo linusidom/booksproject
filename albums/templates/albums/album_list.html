@@ -1,4 +1,4 @@
-{% extends 'books/base.html' %}
+{% extends 'albums/base.html' %}
 {% block content %}
 
 <section id='album_showcase'>
@@ -9,10 +9,10 @@
 			<p class='question'><strong>Did your favorite book make the list?</strong></p>
 		</div>
 		<div class='nerdInfo bg-dark '>
-			<p><span class='text-info'>Is there an API?</span>  YES!! :)</p>
+			<p><span class='text-info'>Is there an API?</span>  <a href="{% url 'apiinfo' %}" target='_blank'>YES!! :)</a></p>
 			<p><span class='text-info'>Do I have to authenticate?</span>  No! :)...Whew!</p>
 			<p><span class='text-info'>But that means...</span>Yup, it's read-only</p>
-			<p>Wow this is really cool!  How did you put all this together?</p>
+			<p><span class='text-info'>Wow this is really cool!</span>  How did you put all this together?</p>
 			<p><a href="https://github.com/linusidom/booksproject" target='_blank'>Check out all the code Here</a></p>
 		</div>
 	</div>

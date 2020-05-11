@@ -37,7 +37,10 @@ urlpatterns = [
     
     path('profile/',include('profile.urls', namespace='profile')),
 
-    path('contact/', views.contactform, name='contactform'),
+    # path('contact/', views.contactform, name='contactform'),
+    path('about_contact/', views.about_contact, name='about_contact'),
+    path('thankyou/', views.ThankYou.as_view(), name='thankyou'),
+    
     path('apiinfo/', views.APIInfoTemplateView.as_view(), name='apiinfo'),
 
     # Foods Apps

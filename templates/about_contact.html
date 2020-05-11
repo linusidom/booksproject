@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h1 class='sectionTitle'>About</h1>
+<div class='grid-2'>
+	<!-- Youtube BootCamp -->
+	<div class='m-3'>
+		<a href="https://www.youtube.com/playlist?list=PLO3nmckjmjn1nhYcDHD583aqJNqhkKMFQ" target='_blank'><span><i class="fab fa-youtube fa-4x text-success"></i></span>
+		<p class='m-3'>Django Full Stack Developer Bootcamp</p></a>
+	</div>
+	<!-- LinkedIn -->
+	<div class='m-3'>
+		<a href="https://www.linkedin.com/in/sunilmodi"><span><i class="fab fa-linkedin fa-4x text-primary"></i></span>
+		<p class='m-3'>LinkedIn</p></a>
+	</div>
+	<!-- Youtube wifiNow -->
+	<div class='m-3'>
+		<a href="https://www.youtube.com/watch?v=piPkvcLwIjI"><span><i class="fab fa-youtube fa-4x text-info"></i></span>
+		<p class='m-3'>Presentation</p></a>
+	</div>
+	<!-- Amazon Books -->
+	<div class='m-3'>
+		<a href="https://www.amazon.com/Vipassana-Experience-detailed-journey-Meditation/dp/1520284462"><span><i class="fas fa-book fa-4x text-warning"></i></span>
+		<p class='m-3'>Publications</p></a>
+	</div>
+	
+</div>
+
+<form method="POST" action="{% url 'about_contact' %}">
+	{% csrf_token %}
+	<div class="form-group">
+		<input class='form-control m-2' type="text" name="name" placeholder="What's your name?">
+		<input class='form-control m-2' type="email" name="email" placeholder="What's your Email?">
+		<textarea class='form-control m-2' name="message" cols="10" rows="3" placeholder="What's on your mind?"></textarea>
+		<input type="submit" class='form-control m-2 btn btn-block btn-info'>
+	</div>
+</form>
+{% endblock %}
